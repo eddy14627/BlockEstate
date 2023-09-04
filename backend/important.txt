@@ -1,0 +1,5 @@
+> solidity data location ??
+    https://youtu.be/G07mD_uYZRI
+
+> event is kind of announcement or notification of contract to tell somenthing is happened to any one who is interested in knowing
+    eg . think of events in smart contracts like announcements or notifications that the contract makes to anyone who's interested. Imagine you have a party, and you want to let your friends know when certain things happen during the party. You might shout out "Cake is served!" or "Dance competition winner announced!" These shouts are like events.

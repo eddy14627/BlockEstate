@@ -1,0 +1,27 @@
+{
+  "name": "client",
+  "homepage": ".",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@next/font": "^13.4.19",
+    "@thirdweb-dev/react": "^3.14.38",
+    "@thirdweb-dev/sdk": "^3.10.57",
+    "axios": "^1.5.0",
+    "ethers": "^5.7.2",
+    "next": "13.4.19",
+    "react": "18.2.0",
+    "react-countdown": "^2.3.5",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "eslint": "8.48.0",
+    "eslint-config-next": "13.4.19"
+  }
+}
