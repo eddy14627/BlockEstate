@@ -1,5 +1,5 @@
 import React from "react";
-
+import Link from "next/link";
 const Footer = () => {
   return (
     <div class="rn-footer-one rn-section-gap bg-color--1 mt--100 mt_md--80 mt_sm--80">
@@ -9,12 +9,12 @@ const Footer = () => {
             <div class="widget-content-wrapper">
               <div class="footer-left">
                 <div class="logo-thumbnail logo-custom-css">
-                  <a class="logo-light" href="index.html">
+                  <Link class="logo-light" href="index.html">
                     <img src="/logo/ll.png" alt="nft-logo" />
-                  </a>
-                  <a class="logo-dark" href="index.html">
+                  </Link>
+                  <Link class="logo-dark" href="index.html">
                     <img src="/logo/logo-dark.png" alt="nft-logo" />
-                  </a>
+                  </Link>
                 </div>
                 <p class="rn-footer-describe">
                   Created with the collaboration of over 60 of the world's best
@@ -29,25 +29,25 @@ const Footer = () => {
               <h6 class="widget-title">BlockEstate</h6>
               <ul class="footer-list-one">
                 <li class="single-list">
-                  <a href="#">Protocol Explore</a>
+                  <Link href="#">Protocol Explore</Link>
                 </li>
                 <li class="single-list">
-                  <a href="#">System Token</a>
+                  <Link href="#">System Token</Link>
                 </li>
                 <li class="single-list">
-                  <a href="#">Otimize Time</a>
+                  <Link href="#">Otimize Time</Link>
                 </li>
                 <li class="single-list">
-                  <a href="#">Visual Checking</a>
+                  <Link href="#">Visual Checking</Link>
                 </li>
                 <li class="single-list">
-                  <a href="#">Fadeup System</a>
+                  <Link href="#">Fadeup System</Link>
                 </li>
                 <li class="single-list">
-                  <a href="#">Activity Log</a>
+                  <Link href="#">Activity Log</Link>
                 </li>
                 <li class="single-list">
-                  <a href="#">System Auto Since</a>
+                  <Link href="#">System Auto Since</Link>
                 </li>
               </ul>
             </div>
@@ -58,25 +58,25 @@ const Footer = () => {
               <h6 class="widget-title">Information</h6>
               <ul class="footer-list-one">
                 <li class="single-list">
-                  <a href="#">Market Explore</a>
+                  <Link href="#">Market Explore</Link>
                 </li>
                 <li class="single-list">
-                  <a href="#">Ready Token</a>
+                  <Link href="#">Ready Token</Link>
                 </li>
                 <li class="single-list">
-                  <a href="#">Main Option</a>
+                  <Link href="#">Main Option</Link>
                 </li>
                 <li class="single-list">
-                  <a href="#">Product Checking</a>
+                  <Link href="#">Product Checking</Link>
                 </li>
                 <li class="single-list">
-                  <a href="#">Blog Grid</a>
+                  <Link href="#">Blog Grid</Link>
                 </li>
                 <li class="single-list">
-                  <a href="/about">About Us</a>
+                  <Link href="/about">About Us</Link>
                 </li>
                 <li class="single-list">
-                  <a href="#">Fix Bug </a>
+                  <Link href="#">Fix Bug </Link>
                 </li>
               </ul>
             </div>

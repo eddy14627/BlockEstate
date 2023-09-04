@@ -26,37 +26,40 @@ const DetailThree = ({ properties }) => {
               data-sal-duration="800"
               class="col-5 col-lg-4 col-md-6 col-sm-6 col-12"
             >
-              <a href={`/detail?property=${property.productID}`}>
+              <Link href={`/detail?property=${property.productID}`}>
                 <div class="product-style-one no-overlay">
                   <div class="card-thumbnail">
-                    <a>
+                    <Link href="#">
                       <img src={property.image} alt="NFT_portfolio" />
-                    </a>
+                    </Link>
                   </div>
                   <div class="product-share-wrapper">
                     <div class="profile-share">
                       {property.reviewers.map((el, i) => (
-                        <a class="avatar" data-tooltip={`${el.slice(0, 15)}..`}>
+                        <Link
+                          class="avatar"
+                          data-tooltip={`${el.slice(0, 15)}..`}
+                        >
                           <img
                             src={`/client/client-${i + 1}.png`}
                             alt="Nft_Profile"
                           />
-                        </a>
+                        </Link>
                       ))}
                       {property.reviewers.length !== 0 && (
-                        <a class="more-author-text" href="#">
+                        <Link class="more-author-text" href="#">
                           Interested Users
-                        </a>
+                        </Link>
                       )}
                     </div>
                   </div>
-                  <a href="#">
+                  <Link href="#">
                     <span class="product-name">
                       {property.title.length >= 25
                         ? `${property.title.slice(0, 22)}...`
                         : property.title}
                     </span>
-                  </a>
+                  </Link>
                   <span class="latest-bid">Category: {property.category}</span>
                   <div class="bid-react-area">
                     <div class="last-bid">{property.price} MATIC</div>
@@ -78,7 +81,7 @@ const DetailThree = ({ properties }) => {
                     </div>
                   </div>
                 </div>
-              </a>
+              </Link>
             </div>
           ))}
         </div>

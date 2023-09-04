@@ -1,6 +1,7 @@
 import React from "react";
 import Countdown from "react-countdown";
 import { Loader } from "../../PageComponents/Components";
+import Link from "next/link";
 const DetailTwo = ({
   property,
   parsedReviews,
@@ -193,14 +194,14 @@ const DetailTwo = ({
                   <div class="top-seller-inner-one">
                     <div class="top-seller-wrapper">
                       <div class="thumbnail">
-                        <a href="#">
+                        <Link href="#">
                           <img src="/client/client-1.png" alt="Nft_Profile" />
-                        </a>
+                        </Link>
                       </div>
                       <div class="top-seller-content">
-                        <a href="#">
+                        <Link href="#">
                           <h6 class="name">Only 10% Own</h6>
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -210,14 +211,14 @@ const DetailTwo = ({
                   <div class="top-seller-inner-one">
                     <div class="top-seller-wrapper">
                       <div class="thumbnail">
-                        <a href="#">
+                        <Link href="#">
                           <img src="/client/client-2.png" alt="Nft_Profile" />
-                        </a>
+                        </Link>
                       </div>
                       <div class="top-seller-content">
-                        <a href="#">
+                        <Link href="#">
                           <h6 class="name">{property?.category}</h6>
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -286,12 +287,12 @@ const DetailTwo = ({
                         >
                           <div class="top-seller-wrapper">
                             <div class="thumbnail">
-                              <a href="#">
+                              <Link href="#">
                                 <img
                                   src={`/client/client-${i + 1}.png`}
                                   alt="Nft_Profile"
                                 />
-                              </a>
+                              </Link>
                             </div>
                             <div class="top-seller-content">
                               <span>{review?.reviewer.slice(0, 35)}... </span>
@@ -336,19 +337,19 @@ const DetailTwo = ({
                           <h6 class="name-title">Owner</h6>
                           <div class="top-seller-wrapper">
                             <div class="thumbnail">
-                              <a href="#">
+                              <Link href="#">
                                 <img
                                   src="/client/client-1.png"
                                   alt="Nft_Profile"
                                 />
-                              </a>
+                              </Link>
                             </div>
                             <div class="top-seller-content">
-                              <a href="#">
+                              <Link href="#">
                                 <h6 class="name">
                                   {property?.owner?.slice(0, 20)}..
                                 </h6>
-                              </a>
+                              </Link>
                             </div>
                           </div>
                         </div>
@@ -411,12 +412,12 @@ const DetailTwo = ({
                         <div key={i + 1} class="top-seller-inner-one">
                           <div class="top-seller-wrapper">
                             <div class="thumbnail">
-                              <a href="#">
+                              <Link href="#">
                                 <img
                                   src={`/client/client-${i + 1}.png`}
                                   alt="Nft_Profile"
                                 />
-                              </a>
+                              </Link>
                             </div>
                             <div class="top-seller-content">
                               <span class="count-number">
@@ -440,12 +441,12 @@ const DetailTwo = ({
                           <div class="top-seller-inner-one">
                             <div class="top-seller-wrapper">
                               <div class="thumbnail">
-                                <a href="#">
+                                <Link href="#">
                                   <img
                                     src="/client/client-7.png"
                                     alt="Nft_Profile"
                                   />
-                                </a>
+                                </Link>
                               </div>
                               <div class="top-seller-content">
                                 <span class="heighest-bid">

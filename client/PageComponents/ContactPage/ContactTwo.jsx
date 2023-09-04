@@ -1,5 +1,5 @@
 import React from "react";
-
+import Link from "next/link";
 const ContactTwo = () => {
   return (
     <div class="rn-contact-top-area rn-section-gapTop bg_color--5">
@@ -48,10 +48,10 @@ const ContactTwo = () => {
               <div class="inner">
                 <h4 class="title">Contact Phone Number</h4>
                 <p>
-                  <a href="tel:+444555666777">+444 555 666 777</a>
+                  <Link href="tel:+444555666777">+444 555 666 777</Link>
                 </p>
                 <p>
-                  <a href="tel:+222222222333">+222 222 222 333</a>
+                  <Link href="tel:+222222222333">+222 222 222 333</Link>
                 </p>
               </div>
             </div>
@@ -83,10 +83,10 @@ const ContactTwo = () => {
               <div class="inner">
                 <h4 class="title">Our Email Address</h4>
                 <p>
-                  <a href="mailto:admin@gmail.com">admin@gmail.com</a>
+                  <Link href="mailto:admin@gmail.com">admin@gmail.com</Link>
                 </p>
                 <p>
-                  <a href="mailto:example@gmail.com">example@gmail.com</a>
+                  <Link href="mailto:example@gmail.com">example@gmail.com</Link>
                 </p>
               </div>
             </div>

@@ -42,16 +42,16 @@ const Banner = () => {
             <div className="wrapper">
               <div className="slider ">
                 <div className="slider-thumbnail thumbnail-overlay">
-                  <a href={`category/housing?name=Housing`}>
+                  <Link href={`category/housing?name=Housing`}>
                     <img
                       className="w-100"
                       src="/portfolio/portfolio-11.jpg"
                       alt="NFT_portfolio"
                     />
-                  </a>
+                  </Link>
                   <div className="read-wrapper">
                     <h5>
-                      <a href="product-details.html">HasLivbe</a>
+                      <Link href="product-details.html">HasLivbe</Link>
                     </h5>
                     <span>Md. Master</span>
                   </div>
@@ -81,7 +81,7 @@ const Banner = () => {
                     </div>
                     <div className="read-wrapper">
                       <h5 className="title">
-                        <a href="#">{el.name}</a>
+                        <Link href="#">{el.name}</Link>
                       </h5>
                       <span>{el.worth} MATIC</span>
                     </div>

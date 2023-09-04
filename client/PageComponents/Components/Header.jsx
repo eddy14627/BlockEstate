@@ -1,6 +1,6 @@
 import React from "react";
 import { useStateContext } from "../../context";
-
+import Link from "next/link";
 const Header = () => {
   const { userBlance, disconnect, address, contract, connect } =
     useStateContext();
@@ -11,69 +11,69 @@ const Header = () => {
           <div class="header-inner">
             <div class="header-left">
               <div class="logo-thumbnail logo-custom-css">
-                <a class="logo-light" href="/">
+                <Link class="logo-light" href="/">
                   <img src="/logo/ll.png" alt="nft-logo" />
-                </a>
-                <a class="logo-dark" href="/">
+                </Link>
+                <Link class="logo-dark" href="/">
                   <img src="/logo/logo-dark.png" alt="nft-logo" />
-                </a>
+                </Link>
               </div>
               <div class="mainmenu-wrapper">
                 <nav id="sideNav" class="mainmenu-nav d-none d-xl-block">
                   <ul class="mainmenu">
                     <li>
-                      <a href="/about">About</a>
+                      <Link href="/about">About</Link>
                     </li>
                     <li>
-                      <a>Explore</a>
+                      <Link href="#">Explore</Link>
                       <ul class="submenu">
                         <li>
-                          <a href="/active">
+                          <Link href="/active">
                             Activity<i class="feather-fast-forward"></i>
-                          </a>
+                          </Link>
                         </li>
                         {address && (
                           <li>
-                            <a href="/author">
+                            <Link href="/author">
                               Author<i class="feather-fast-forward"></i>
-                            </a>
+                            </Link>
                           </li>
                         )}
                         {address && (
                           <li>
-                            <a href="/create">
+                            <Link href="/create">
                               Create
                               <i class="feather-fast-forward"></i>
-                            </a>
+                            </Link>
                           </li>
                         )}
 
                         <li>
-                          <a href="/creator">
+                          <Link href="/creator">
                             Creator
                             <i class="feather-fast-forward"></i>
-                          </a>
+                          </Link>
                         </li>
                       </ul>
                     </li>
                     <li>
-                      <a>Pages</a>
+                      <Link href="#">Pages</Link>
                       <ul class="submenu">
                         <li>
-                          <a href="/privacy">
+                          <Link href="/privacy">
                             Privacy<i class="feather-fast-forward"></i>
-                          </a>
+                          </Link>
                         </li>
                         <li>
-                          <a href="/404">
+                          <Link href="/404">
                             404
                             <i class="feather-fast-forward"></i>
-                          </a>
+                          </Link>
                         </li>
                       </ul>
                     </li>
                     <li>
-                      <a href="/contact">Contact</a>
+                      <Link href="/contact">Contact</Link>
                     </li>
                   </ul>
                 </nav>
@@ -138,9 +138,9 @@ const Header = () => {
               {/* END connect wallet */}
               <div class="setting-option rn-icon-list notification-badge">
                 <div class="icon-box">
-                  <a>
+                  <Link href="#">
                     <i class="feather-bell"></i>
-                  </a>
+                  </Link>
                 </div>
               </div>
 
@@ -148,28 +148,28 @@ const Header = () => {
                 <div>
                   <div class="setting-option rn-icon-list user-account">
                     <div class="icon-box">
-                      <a href="/author">
+                      <Link href="/author">
                         <img src="/icons/boy-avater.png" alt="Images" />
-                      </a>
+                      </Link>
                       <div class="rn-dropdown">
                         <div class="rn-inner-top">
                           <h4 class="title">
                             <span>
-                              <a>A/C no. </a>
+                              <Link href="#">A/C no. </Link>
                             </span>
                             <span>{""}</span>
-                            <a href="author">{address.slice(0, 15)}...</a>
+                            <Link href="author">{address.slice(0, 15)}...</Link>
                           </h4>
                         </div>
 
                         <ul class="list-inner">
                           <li>
-                            <a href="/author">My Profile</a>
+                            <Link href="/author">My Profile</Link>
                           </li>
                           <li>
-                            <a href="#" onClick={() => disconnect()}>
+                            <Link href="#" onClick={() => disconnect()}>
                               Disconncet
-                            </a>
+                            </Link>
                           </li>
                         </ul>
                       </div>
@@ -187,37 +187,6 @@ const Header = () => {
                   </button>
                 </div>
               </div>
-
-              {/* <div id="my_switcher" class="my_switcher setting-option">
-                <ul>
-                  <li>
-                    <a
-                      href="javascript: void(0);"
-                      data-theme="light"
-                      class="setColor light"
-                    >
-                      <img
-                        class="sun-image"
-                        src="/icons/sun-01.svg"
-                        alt="Sun images"
-                      />
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="javascript: void(0);"
-                      data-theme="dark"
-                      class="setColor dark"
-                    >
-                      <img
-                        class="Victor Image"
-                        src="/icons/vector.svg"
-                        alt="Vector Images"
-                      />
-                    </a>
-                  </li>
-                </ul>
-              </div> */}
             </div>
           </div>
         </div>
@@ -228,12 +197,12 @@ const Header = () => {
         <div class="inner">
           <div class="header-top">
             <div class="logo logo-custom-css">
-              <a class="logo-light" href="index.html">
+              <Link class="logo-light" href="index.html">
                 <img src="/logo/logo-white.png" alt="nft-logo" />
-              </a>
-              <a class="logo-dark" href="index.html">
+              </Link>
+              <Link class="logo-dark" href="index.html">
                 <img src="/logo/logo-dark.png" alt="nft-logo" />
-              </a>
+              </Link>
             </div>
             <div class="close-menu">
               <button class="close-button">
@@ -244,20 +213,20 @@ const Header = () => {
           <nav>
             <ul class="mainmenu">
               <li>
-                <a href="/about">About</a>
+                <Link href="/about">About</Link>
               </li>
               <li>
-                <a class="nav-a its_new" href="/explor">
+                <Link class="nav-a its_new" href="/explor">
                   Explore
-                </a>
+                </Link>
               </li>
               <li>
-                <a class="nav-a its_new" href="/">
+                <Link class="nav-a its_new" href="/">
                   Pages
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/contact">Contact</a>
+                <Link href="/contact">Contact</Link>
               </li>
             </ul>
           </nav>

@@ -1,6 +1,6 @@
 import React from "react";
-import Link from "next/link";
-const DetailFive = () => {
+
+const ProductThree = () => {
   return (
     <div
       class="rn-popup-modal share-modal-wrapper modal fade"
@@ -24,44 +24,44 @@ const DetailFive = () => {
           <div class="modal-body">
             <ul class="social-share-default">
               <li>
-                <Link href="#">
+                <a href="#">
                   <span class="icon">
                     {/* <i data-feather="facebook"></i> */}
                   </span>
                   <span class="text">facebook</span>
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#">
+                <a href="#">
                   <span class="icon">
                     {/* <i data-feather="twitter"></i> */}
                   </span>
                   <span class="text">twitter</span>
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#">
+                <a href="#">
                   <span class="icon">
                     {/* <i data-feather="linkedin"></i> */}
                   </span>
                   <span class="text">linkedin</span>
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#">
+                <a href="#">
                   <span class="icon">
                     {/* <i data-feather="instagram"></i> */}
                   </span>
                   <span class="text">instagram</span>
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#">
+                <a href="#">
                   <span class="icon">
                     {/* <i data-feather="youtube"></i> */}
                   </span>
                   <span class="text">youtube</span>
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -71,4 +71,4 @@ const DetailFive = () => {
   );
 };
 
-export default DetailFive;
+export default ProductThree;

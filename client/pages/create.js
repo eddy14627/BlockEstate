@@ -8,7 +8,7 @@ import {
 } from "../PageComponents/CreatePage";
 import { Header, Footer, Copyright } from "../PageComponents/Components";
 
-const create = () => {
+const Create = () => {
   return (
     <div class="template-color-1 nft-body-connect">
       <Header />
@@ -21,4 +21,4 @@ const create = () => {
   );
 };
 
-export default create;
+export default Create;

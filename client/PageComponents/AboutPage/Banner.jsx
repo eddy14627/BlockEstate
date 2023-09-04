@@ -1,5 +1,5 @@
 import React from "react";
-
+import Link from "next/link";
 const Banner = () => {
   return (
     <div class="rn-about-banner-area rn-section-gapTop">
@@ -51,7 +51,7 @@ const Banner = () => {
                     collectible, an in-game item or real estate. Unlike regular
                     cryptocurrencies like bitcoin or fiat money like the U.S.
                   </p>
-                  <a
+                  <Link
                     href="/blog"
                     class="btn btn-primary-alta btn-large sal-animate mt--20"
                     data-sal="slide-up"
@@ -59,7 +59,7 @@ const Banner = () => {
                     data-sal-delay="150"
                   >
                     See Our Blog
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

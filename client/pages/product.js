@@ -9,7 +9,7 @@ import {
   ProductTwo,
 } from "../PageComponents/ProductPAge";
 
-const about = () => {
+const Product = () => {
   return (
     <div class="template-color-1 nft-body-connect">
       <Header />
@@ -23,4 +23,4 @@ const about = () => {
   );
 };
 
-export default about;
+export default Product;

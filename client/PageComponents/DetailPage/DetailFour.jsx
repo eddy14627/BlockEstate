@@ -1,5 +1,5 @@
 import React from "react";
-
+import Link from "next/link";
 const DetailFour = () => {
   return (
     <div class="rn-new-items rn-section-gapTop">
@@ -25,28 +25,36 @@ const DetailFour = () => {
           >
             <div class="product-style-one no-overlay">
               <div class="card-thumbnail">
-                <a href="product-details.html">
+                <Link href="product-details.html">
                   <img src="/portfolio/portfolio-01.jpg" alt="NFT_portfolio" />
-                </a>
+                </Link>
               </div>
               <div class="product-share-wrapper">
                 <div class="profile-share">
-                  <a href="author.html" class="avatar" data-tooltip="Jone lee">
+                  <Link
+                    href="author.html"
+                    class="avatar"
+                    data-tooltip="Jone lee"
+                  >
                     <img src="/client/client-1.png" alt="Nft_Profile" />
-                  </a>
-                  <a href="author.html" class="avatar" data-tooltip="Jone Due">
+                  </Link>
+                  <Link
+                    href="author.html"
+                    class="avatar"
+                    data-tooltip="Jone Due"
+                  >
                     <img src="/client/client-2.png" alt="Nft_Profile" />
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="author.html"
                     class="avatar"
                     data-tooltip="Nisat Tara"
                   >
                     <img src="/client/client-3.png" alt="Nft_Profile" />
-                  </a>
-                  <a class="more-author-text" href="#">
+                  </Link>
+                  <Link class="more-author-text" href="#">
                     9+ Place Bit.
-                  </a>
+                  </Link>
                 </div>
                 <div class="share-btn share-btn-activation dropdown">
                   <button
@@ -90,9 +98,9 @@ const DetailFour = () => {
                   </div>
                 </div>
               </div>
-              <a href="product-details.html">
+              <Link href="product-details.html">
                 <span class="product-name">Preatent</span>
-              </a>
+              </Link>
               <span class="latest-bid">Highest bid 1/20</span>
               <div class="bid-react-area">
                 <div class="last-bid">0.244wETH</div>
@@ -124,28 +132,36 @@ const DetailFour = () => {
           >
             <div class="product-style-one no-overlay">
               <div class="card-thumbnail">
-                <a href="product-details.html">
+                <Link href="product-details.html">
                   <img src="/portfolio/portfolio-02.jpg" alt="NFT_portfolio" />
-                </a>
+                </Link>
               </div>
               <div class="product-share-wrapper">
                 <div class="profile-share">
-                  <a href="author.html" class="avatar" data-tooltip="Jone lee">
+                  <Link
+                    href="author.html"
+                    class="avatar"
+                    data-tooltip="Jone lee"
+                  >
                     <img src="/client/client-4.png" alt="Nft_Profile" />
-                  </a>
-                  <a href="author.html" class="avatar" data-tooltip="Nira Ara">
+                  </Link>
+                  <Link
+                    href="author.html"
+                    class="avatar"
+                    data-tooltip="Nira Ara"
+                  >
                     <img src="/client/client-5.png" alt="Nft_Profile" />
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="author.html"
                     class="avatar"
                     data-tooltip="Fatima Afrafy"
                   >
                     <img src="/client/client-6.png" alt="Nft_Profile" />
-                  </a>
-                  <a class="more-author-text" href="#">
+                  </Link>
+                  <Link class="more-author-text" href="#">
                     10+ Place Bit.
-                  </a>
+                  </Link>
                 </div>
                 <div class="share-btn share-btn-activation dropdown">
                   <button
@@ -189,9 +205,9 @@ const DetailFour = () => {
                   </div>
                 </div>
               </div>
-              <a href="product-details.html">
+              <Link href="product-details.html">
                 <span class="product-name">Diamond Dog</span>
-              </a>
+              </Link>
               <span class="latest-bid">Highest bid 5/11</span>
               <div class="bid-react-area">
                 <div class="last-bid">0.892wETH</div>
@@ -223,28 +239,36 @@ const DetailFour = () => {
           >
             <div class="product-style-one no-overlay">
               <div class="card-thumbnail">
-                <a href="product-details.html">
+                <Link href="product-details.html">
                   <img src="/portfolio/portfolio-03.jpg" alt="NFT_portfolio" />
-                </a>
+                </Link>
               </div>
               <div class="product-share-wrapper">
                 <div class="profile-share">
-                  <a href="author.html" class="avatar" data-tooltip="Jone lee">
+                  <Link
+                    href="author.html"
+                    class="avatar"
+                    data-tooltip="Jone lee"
+                  >
                     <img src="/client/client-1.png" alt="Nft_Profile" />
-                  </a>
-                  <a href="author.html" class="avatar" data-tooltip="Janin Ara">
+                  </Link>
+                  <Link
+                    href="author.html"
+                    class="avatar"
+                    data-tooltip="Janin Ara"
+                  >
                     <img src="/client/client-8.png" alt="Nft_Profile" />
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="author.html"
                     class="avatar"
                     data-tooltip="Atif Islam"
                   >
                     <img src="/client/client-9.png" alt="Nft_Profile" />
-                  </a>
-                  <a class="more-author-text" href="#">
+                  </Link>
+                  <Link class="more-author-text" href="#">
                     10+ Place Bit.
-                  </a>
+                  </Link>
                 </div>
                 <div class="share-btn share-btn-activation dropdown">
                   <button
@@ -288,9 +312,9 @@ const DetailFour = () => {
                   </div>
                 </div>
               </div>
-              <a href="product-details.html">
+              <Link href="product-details.html">
                 <span class="product-name">OrBid6</span>
-              </a>
+              </Link>
               <span class="latest-bid">Highest bid 2/31</span>
               <div class="bid-react-area">
                 <div class="last-bid">0.2128wETH</div>
@@ -322,24 +346,36 @@ const DetailFour = () => {
           >
             <div class="product-style-one no-overlay">
               <div class="card-thumbnail">
-                <a href="product-details.html">
+                <Link href="product-details.html">
                   <img src="/portfolio/portfolio-04.jpg" alt="NFT_portfolio" />
-                </a>
+                </Link>
               </div>
               <div class="product-share-wrapper">
                 <div class="profile-share">
-                  <a href="author.html" class="avatar" data-tooltip="Jone lee">
+                  <Link
+                    href="author.html"
+                    class="avatar"
+                    data-tooltip="Jone lee"
+                  >
                     <img src="/client/client-1.png" alt="Nft_Profile" />
-                  </a>
-                  <a href="author.html" class="avatar" data-tooltip="Jone lee">
+                  </Link>
+                  <Link
+                    href="author.html"
+                    class="avatar"
+                    data-tooltip="Jone lee"
+                  >
                     <img src="/client/client-3.png" alt="Nft_Profile" />
-                  </a>
-                  <a href="author.html" class="avatar" data-tooltip="Jone lee">
+                  </Link>
+                  <Link
+                    href="author.html"
+                    class="avatar"
+                    data-tooltip="Jone lee"
+                  >
                     <img src="/client/client-5.png" alt="Nft_Profile" />
-                  </a>
-                  <a class="more-author-text" href="#">
+                  </Link>
+                  <Link class="more-author-text" href="#">
                     8+ Place Bit.
-                  </a>
+                  </Link>
                 </div>
                 <div class="share-btn share-btn-activation dropdown">
                   <button
@@ -383,9 +419,9 @@ const DetailFour = () => {
                   </div>
                 </div>
               </div>
-              <a href="product-details.html">
+              <Link href="product-details.html">
                 <span class="product-name">Morgan11</span>
-              </a>
+              </Link>
               <span class="latest-bid">Highest bid 3/16</span>
               <div class="bid-react-area">
                 <div class="last-bid">0.265wETH</div>
@@ -417,24 +453,36 @@ const DetailFour = () => {
           >
             <div class="product-style-one no-overlay">
               <div class="card-thumbnail">
-                <a href="product-details.html">
+                <Link href="product-details.html">
                   <img src="/portfolio/portfolio-05.jpg" alt="NFT_portfolio" />
-                </a>
+                </Link>
               </div>
               <div class="product-share-wrapper">
                 <div class="profile-share">
-                  <a href="author.html" class="avatar" data-tooltip="Jone lee">
+                  <Link
+                    href="author.html"
+                    class="avatar"
+                    data-tooltip="Jone lee"
+                  >
                     <img src="/client/client-2.png" alt="Nft_Profile" />
-                  </a>
-                  <a href="author.html" class="avatar" data-tooltip="Jone lee">
+                  </Link>
+                  <Link
+                    href="author.html"
+                    class="avatar"
+                    data-tooltip="Jone lee"
+                  >
                     <img src="/client/client-7.png" alt="Nft_Profile" />
-                  </a>
-                  <a href="author.html" class="avatar" data-tooltip="Jone lee">
+                  </Link>
+                  <Link
+                    href="author.html"
+                    class="avatar"
+                    data-tooltip="Jone lee"
+                  >
                     <img src="/client/client-9.png" alt="Nft_Profile" />
-                  </a>
-                  <a class="more-author-text" href="#">
+                  </Link>
+                  <Link class="more-author-text" href="#">
                     15+ Place Bit.
-                  </a>
+                  </Link>
                 </div>
                 <div class="share-btn share-btn-activation dropdown">
                   <button
@@ -478,9 +526,9 @@ const DetailFour = () => {
                   </div>
                 </div>
               </div>
-              <a href="product-details.html">
+              <Link href="product-details.html">
                 <span class="product-name">mAtal8</span>
-              </a>
+              </Link>
               <span class="latest-bid">Highest bid 6/50</span>
               <div class="bid-react-area">
                 <div class="last-bid">0.244wETH</div>

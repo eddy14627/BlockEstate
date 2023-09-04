@@ -1,5 +1,5 @@
 import React from "react";
-
+import Link from "next/link";
 const PrivacyOne = () => {
   return (
     <div class="rn-breadcrumb-inner ptb--30">
@@ -13,7 +13,7 @@ const PrivacyOne = () => {
           <div class="col-lg-6 col-md-6 col-12">
             <ul class="breadcrumb-list">
               <li class="item">
-                <a href="index.html">Home</a>
+                <Link href="index.html">Home</Link>
               </li>
               <li class="separator">
                 <i class="feather-chevron-right"></i>

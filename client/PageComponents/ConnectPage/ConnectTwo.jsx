@@ -1,5 +1,5 @@
 import React from "react";
-
+import Link from "next/link";
 const ConnectTwo = () => {
   return (
     <div class="rn-connect-area rn-section-gapTop">
@@ -14,7 +14,7 @@ const ConnectTwo = () => {
             <h3 class="connect-title">Connect your wallet</h3>
             <p class="connect-td">
               Connect with one of available wallet providers or create a new
-              wallet. <a href="#">What is a wallet?</a>
+              wallet. <Link href="#">What is a wallet?</Link>
             </p>
           </div>
           <div
@@ -55,14 +55,14 @@ const ConnectTwo = () => {
                     <div class="icon">{/* <i data-feather="cast"></i> */}</div>
                     <div class="content">
                       <h4 class="title">
-                        <a href="#">Bitcollet</a>
+                        <Link href="#">Bitcollet</Link>
                       </h4>
                       <p class="description">
                         I throw myself down among the tall.
                       </p>
                     </div>
                   </div>
-                  <a class="over-link" href="#"></a>
+                  <Link class="over-link" href="#"></Link>
                 </div>
               </div>
 
@@ -79,14 +79,14 @@ const ConnectTwo = () => {
                     </div>
                     <div class="content">
                       <h4 class="title">
-                        <a href="#">GrasCash</a>
+                        <Link href="#">GrasCash</Link>
                       </h4>
                       <p class="description">
                         This is a great deals For cash transfer
                       </p>
                     </div>
                   </div>
-                  <a class="over-link" href="#"></a>
+                  <Link class="over-link" href="#"></Link>
                 </div>
               </div>
 
@@ -103,14 +103,14 @@ const ConnectTwo = () => {
                     </div>
                     <div class="content">
                       <h4 class="title">
-                        <a href="#">Import</a>
+                        <Link href="#">Import</Link>
                       </h4>
                       <p class="description">
                         Great oppertunity to reach them.
                       </p>
                     </div>
                   </div>
-                  <a class="over-link" href="#"></a>
+                  <Link class="over-link" href="#"></Link>
                 </div>
               </div>
 
@@ -127,14 +127,14 @@ const ConnectTwo = () => {
                     </div>
                     <div class="content">
                       <h4 class="title">
-                        <a href="#">TiOne</a>
+                        <Link href="#">TiOne</Link>
                       </h4>
                       <p class="description">
                         Built your bigger offers then me
                       </p>
                     </div>
                   </div>
-                  <a class="over-link" href="#"></a>
+                  <Link class="over-link" href="#"></Link>
                 </div>
               </div>
 
@@ -151,14 +151,14 @@ const ConnectTwo = () => {
                     </div>
                     <div class="content">
                       <h4 class="title">
-                        <a href="#">Bkashes</a>
+                        <Link href="#">Bkashes</Link>
                       </h4>
                       <p class="description">
                         Cash Transfer for easyest way you wast
                       </p>
                     </div>
                   </div>
-                  <a class="over-link" href="#"></a>
+                  <Link class="over-link" href="#"></Link>
                 </div>
               </div>
 
@@ -175,14 +175,14 @@ const ConnectTwo = () => {
                     </div>
                     <div class="content">
                       <h4 class="title">
-                        <a href="#">Pyynle</a>
+                        <Link href="#">Pyynle</Link>
                       </h4>
                       <p class="description">
                         More then myself down among the Cash.
                       </p>
                     </div>
                   </div>
-                  <a class="over-link" href="#"></a>
+                  <Link class="over-link" href="#"></Link>
                 </div>
               </div>
 
@@ -199,14 +199,14 @@ const ConnectTwo = () => {
                     </div>
                     <div class="content">
                       <h4 class="title">
-                        <a href="#">YesCash</a>
+                        <Link href="#">YesCash</Link>
                       </h4>
                       <p class="description">
                         Biggest Bank transfer for best oppertunity
                       </p>
                     </div>
                   </div>
-                  <a class="over-link" href="#"></a>
+                  <Link class="over-link" href="#"></Link>
                 </div>
               </div>
             </div>

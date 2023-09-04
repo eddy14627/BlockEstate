@@ -4,7 +4,7 @@ import React from "react";
 import { ConnectOne, ConnectTwo } from "../PageComponents/ConnectPage";
 import { Header, Footer, Copyright } from "../PageComponents/Components";
 
-const connect = () => {
+const Connect = () => {
   return (
     <div class="template-color-1 nft-body-connect">
       <Header />
@@ -16,4 +16,4 @@ const connect = () => {
   );
 };
 
-export default connect;
+export default Connect;

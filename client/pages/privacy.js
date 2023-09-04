@@ -4,7 +4,7 @@ import React from "react";
 import { Header, Footer, Copyright } from "../PageComponents/Components";
 import { PrivacyOne, PrivacyTwo } from "../PageComponents/PrivacyPage";
 
-const privacy = () => {
+const Privacy = () => {
   return (
     <div class="template-color-1 nft-body-connect">
       <Header />
@@ -16,4 +16,4 @@ const privacy = () => {
   );
 };
 
-export default privacy;
+export default Privacy;

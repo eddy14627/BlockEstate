@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const Live = ({ properties }) => {
   console.log(properties);
@@ -34,16 +35,17 @@ const Live = ({ properties }) => {
                   data-sal-delay="150"
                 >
                   <div class="card-thumbnail">
-                    <a href={`/detail?property=${property.productID}`}>
+                    <Link href={`/detail?property=${property.productID}`}>
                       <img src={property.image} alt={property.title} />
-                    </a>
+                    </Link>
                   </div>
                   <div class="product-share-wrapper">
                     <div class="profile-share">
                       {property.reviewers &&
                         property.reviewers.length !== 0 &&
                         property.reviewers.map((el, i) => (
-                          <a
+                          <Link
+                            href="#"
                             class="avatar"
                             data-tooltip={`${el.slice(0, 15)}...`}
                           >
@@ -51,23 +53,23 @@ const Live = ({ properties }) => {
                               src={`/client/client-${i + 1}.png`}
                               alt="Nft_Profile"
                             />
-                          </a>
+                          </Link>
                         ))}
                       {property.reviewers &&
                         property.reviewers.length !== 0 && (
-                          <a class="more-author-text" href="#">
+                          <Link class="more-author-text" href="#">
                             Interested User
-                          </a>
+                          </Link>
                         )}
                     </div>
                   </div>
-                  <a href={`/detail?property=${property.productID}`}>
+                  <Link href={`/detail?property=${property.productID}`}>
                     <span class="product-name">
                       {property.title.length >= 25
                         ? `${property.title.slice(0, 22)}...`
                         : property.title}
                     </span>
-                  </a>
+                  </Link>
                   <span class="latest-bid">{property.category}</span>
                   <div class="bid-react-area">
                     <div class="last-bid">{property.price} MATIC</div>

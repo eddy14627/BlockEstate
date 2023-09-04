@@ -5,7 +5,7 @@ import { useStateContext } from "../context";
 import { checkIfImage } from "../utils";
 import { ethers } from "ethers";
 
-const indexOld = () => {
+const IndexOld = () => {
   const {
     address,
     connect,
@@ -118,4 +118,4 @@ const indexOld = () => {
   );
 };
 
-export default indexOld;
+export default IndexOld;

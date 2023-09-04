@@ -1,4 +1,6 @@
+import React from "react";
 import "../styles/globals.css";
+import Script from "next/script";
 import { ChainId, ThirdwebProvider } from "@thirdweb-dev/react";
 import { StateContextProvider } from "../context";
 // internal imports
@@ -11,33 +13,42 @@ const App = ({ Component, pageProps }) => {
         </StateContextProvider>
       </ThirdwebProvider>
 
-      <script src="/js/vendor/jquery.js"></script>
-      <script src="/js/vendor/jquery.nice-select.min.js"></script>
-      <script src="/js/vendor/jquery-ui.js"></script>
-      <script src="/js/vendor/modernizer.min.js"></script>
-      <script src="/js/vendor/feather.min.js"></script>
-      <script src="/js/vendor/slick.min.js"></script>
-      <script src="/js/vendor/bootstrap.min.js"></script>
-      <script src="/js/vendor/sal.min.js"></script>
-      <script src="/js/vendor/particles.js"></script>
-      <script src="/js/vendor/jquery.style.swicher.js"></script>
-      <script src="/js/vendor/js.cookie.js"></script>
-      <script src="/js/vendor/count-down.js"></script>
-      <script src="/js/vendor/isotop.js"></script>
-      <script src="/js/vendor/imageloaded.js"></script>
-      {/* <script src="/js/vendor/backtoTop.js"></script> */}
-      <script src="/js/vendor/odometer.js"></script>
-      <script src="/js/vendor/jquery-appear.js"></script>
-      <script src="/js/vendor/scrolltrigger.js"></script>
-      <script src="/js/vendor/jquery.custom-file-input.js"></script>
-      <script src="/js/vendor/savePopup.js"></script>
-      <script src="/js/vendor/vanilla.tilt.js"></script>
+      <Script src="/js/vendor/jquery.js" strategy="beforeInteractive" />
+      <Script
+        src="/js/vendor/jquery.nice-select.min.js"
+        strategy="beforeInteractive"
+      />
+      <Script src="/js/vendor/jquery-ui.js" strategy="beforeInteractive" />
+      <Script src="/js/vendor/modernizer.min.js" strategy="beforeInteractive" />
+      <Script src="/js/vendor/feather.min.js" strategy="beforeInteractive" />
+      <Script src="/js/vendor/slick.min.js" strategy="beforeInteractive" />
+      <Script src="/js/vendor/bootstrap.min.js" strategy="beforeInteractive" />
+      <Script src="/js/vendor/sal.min.js" strategy="beforeInteractive" />
+      <Script src="/js/vendor/particles.js" strategy="beforeInteractive" />
+      <Script
+        src="/js/vendor/jquery.style.swicher.js"
+        strategy="beforeInteractive"
+      />
+      <Script src="/js/vendor/js.cookie.js" strategy="beforeInteractive" />
+      <Script src="/js/vendor/count-down.js" strategy="beforeInteractive" />
+      <Script src="/js/vendor/isotop.js" strategy="beforeInteractive" />
+      <Script src="/js/vendor/imageloaded.js" strategy="beforeInteractive" />
+      {/* {/* <Script src="/js/vendor/backtoTop.js" strategy="beforeInteractive" /  */}
+      <Script src="/js/vendor/odometer.js" strategy="beforeInteractive" />
+      <Script src="/js/vendor/jquery-appear.js" strategy="beforeInteractive" />
+      <Script src="/js/vendor/scrolltrigger.js" strategy="beforeInteractive" />
+      <Script
+        src="/js/vendor/jquery.custom-file-input.js"
+        strategy="beforeInteractive"
+      />
+      <Script src="/js/vendor/savePopup.js" strategy="beforeInteractive" />
+      <Script src="/js/vendor/vanilla.tilt.js" strategy="beforeInteractive" />
 
-      <script src="/js/main.js"></script>
+      <Script src="/js/main.js" strategy="beforeInteractive" />
 
-      {/* <script src="/js/vendor/web3.min.js"></script>
-      <script src="/js/vendor/maralis.js"></script>
-      <script src="/js/vendor/nft.js"></script> */}
+      <Script src="/js/vendor/web3.min.js" strategy="beforeInteractive" />
+      <Script src="/js/vendor/maralis.js" strategy="beforeInteractive" />
+      <Script src="/js/vendor/nft.js" strategy="beforeInteractive" />
     </>
   );
 };

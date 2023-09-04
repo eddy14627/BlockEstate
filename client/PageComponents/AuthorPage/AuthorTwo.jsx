@@ -1,5 +1,5 @@
 import React from "react";
-
+import Link from "next/link";
 const AuthorTwo = ({ address, author }) => {
   console.log(author);
   return (
@@ -14,22 +14,22 @@ const AuthorTwo = ({ address, author }) => {
                 </div>
                 <div class="rn-author-info-content">
                   <h4 class="title">{address?.slice(0, 20)}...</h4>
-                  <a href="#" class="social-follw">
+                  <Link href="#" class="social-follw">
                     {/* <i data-feather="twitter"></i> */}
                     <span class="user-name">it0bsession</span>
-                  </a>
+                  </Link>
                   <div class="follow-area">
                     <div class="follow followers">
                       <span>
                         186k{" "}
-                        <a href="#" class="color-body">
+                        <Link href="#" class="color-body">
                           followers
-                        </a>
+                        </Link>
                       </span>
                     </div>
                     <div class="follow following">
                       <span>
-                        {author.length} <a>Owned Property</a>
+                        {author.length} <Link href="#">Owned Property</Link>
                       </span>
                     </div>
                   </div>

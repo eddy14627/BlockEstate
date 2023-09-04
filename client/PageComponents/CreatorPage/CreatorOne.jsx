@@ -1,5 +1,5 @@
 import React from "react";
-
+import Link from "next/link";
 const CreatorOne = ({ creators }) => {
   return (
     <div class="rn-creator-title-area rn-section-gapTop">
@@ -20,21 +20,21 @@ const CreatorOne = ({ creators }) => {
               <div class="top-seller-inner-one explore">
                 <div class="top-seller-wrapper">
                   <div class="thumbnail varified">
-                    <a href="/author">
+                    <Link href="/author">
                       <img
                         src={`/client/client-${i + 1}.png`}
                         alt="Nft_Profile"
                       />
-                    </a>
+                    </Link>
                   </div>
                   <div class="top-seller-content">
-                    <a href="/author">
+                    <Link href="/author">
                       <h6 class="name">{el.owner.slice(0, 10)}...</h6>
-                    </a>
+                    </Link>
                     <span class="count-number">{el.total}</span>
                   </div>
                 </div>
-                <a class="over-link" href="/author"></a>
+                <Link class="over-link" href="/author"></Link>
               </div>
             </div>
           ))}
@@ -48,18 +48,18 @@ const CreatorOne = ({ creators }) => {
             <div class="top-seller-inner-one explore">
               <div class="top-seller-wrapper">
                 <div class="thumbnail">
-                  <a>
+                  <Link href="#">
                     <img src="/client/client-3.png" alt="Nft_Profile" />
-                  </a>
+                  </Link>
                 </div>
                 <div class="top-seller-content">
-                  <a>
+                  <Link href="#">
                     <h6 class="name">JOne Lee</h6>
-                  </a>
+                  </Link>
                   <span class="count-number">$900,000</span>
                 </div>
               </div>
-              <a class="over-link"></a>
+              <Link href="#" class="over-link"></Link>
             </div>
           </div>
 
@@ -72,18 +72,18 @@ const CreatorOne = ({ creators }) => {
             <div class="top-seller-inner-one explore">
               <div class="top-seller-wrapper">
                 <div class="thumbnail varified">
-                  <a>
+                  <Link href="#">
                     <img src="/client/client-4.png" alt="Nft_Profile" />
-                  </a>
+                  </Link>
                 </div>
                 <div class="top-seller-content">
-                  <a>
+                  <Link href="#">
                     <h6 class="name">Malinga</h6>
-                  </a>
+                  </Link>
                   <span class="count-number">$2400,000</span>
                 </div>
               </div>
-              <a class="over-link"></a>
+              <Link href="#" class="over-link"></Link>
             </div>
           </div>
 
@@ -96,18 +96,18 @@ const CreatorOne = ({ creators }) => {
             <div class="top-seller-inner-one explore">
               <div class="top-seller-wrapper">
                 <div class="thumbnail">
-                  <a>
+                  <Link href="#">
                     <img src="/client/client-5.png" alt="Nft_Profile" />
-                  </a>
+                  </Link>
                 </div>
                 <div class="top-seller-content">
-                  <a>
+                  <Link href="#">
                     <h6 class="name">Favis</h6>
-                  </a>
+                  </Link>
                   <span class="count-number">$290,000</span>
                 </div>
               </div>
-              <a class="over-link"></a>
+              <Link href="#" class="over-link"></Link>
             </div>
           </div>
 
@@ -120,18 +120,18 @@ const CreatorOne = ({ creators }) => {
             <div class="top-seller-inner-one explore">
               <div class="top-seller-wrapper">
                 <div class="thumbnail">
-                  <a>
+                  <Link href="#">
                     <img src="/client/client-6.png" alt="Nft_Profile" />
-                  </a>
+                  </Link>
                 </div>
                 <div class="top-seller-content">
-                  <a>
+                  <Link href="#">
                     <h6 class="name">Fakir</h6>
-                  </a>
+                  </Link>
                   <span class="count-number">$299,00,000</span>
                 </div>
               </div>
-              <a class="over-link"></a>
+              <Link href="#" class="over-link"></Link>
             </div>
           </div>
 
@@ -144,18 +144,18 @@ const CreatorOne = ({ creators }) => {
             <div class="top-seller-inner-one explore">
               <div class="top-seller-wrapper">
                 <div class="thumbnail varified">
-                  <a>
+                  <Link href="#">
                     <img src="/client/client-7.png" alt="Nft_Profile" />
-                  </a>
+                  </Link>
                 </div>
                 <div class="top-seller-content">
-                  <a>
+                  <Link href="#">
                     <h6 class="name">Sajib</h6>
-                  </a>
+                  </Link>
                   <span class="count-number">$1100,000</span>
                 </div>
               </div>
-              <a class="over-link"></a>
+              <Link href="#" class="over-link"></Link>
             </div>
           </div>
 
@@ -168,18 +168,18 @@ const CreatorOne = ({ creators }) => {
             <div class="top-seller-inner-one explore">
               <div class="top-seller-wrapper">
                 <div class="thumbnail">
-                  <a>
+                  <Link href="#">
                     <img src="/client/client-9.png" alt="Nft_Profile" />
-                  </a>
+                  </Link>
                 </div>
                 <div class="top-seller-content">
-                  <a>
+                  <Link href="#">
                     <h6 class="name">Mikel</h6>
-                  </a>
+                  </Link>
                   <span class="count-number">$2500,000</span>
                 </div>
               </div>
-              <a class="over-link"></a>
+              <Link href="#" class="over-link"></Link>
             </div>
           </div>
 
@@ -192,18 +192,18 @@ const CreatorOne = ({ creators }) => {
             <div class="top-seller-inner-one explore">
               <div class="top-seller-wrapper">
                 <div class="thumbnail varified">
-                  <a>
+                  <Link href="#">
                     <img src="/client/client-8.png" alt="Nft_Profile" />
-                  </a>
+                  </Link>
                 </div>
                 <div class="top-seller-content">
-                  <a>
+                  <Link href="#">
                     <h6 class="name">Kolik</h6>
-                  </a>
+                  </Link>
                   <span class="count-number">$9900,000</span>
                 </div>
               </div>
-              <a class="over-link"></a>
+              <Link href="#" class="over-link"></Link>
             </div>
           </div>
 
@@ -216,18 +216,18 @@ const CreatorOne = ({ creators }) => {
             <div class="top-seller-inner-one explore">
               <div class="top-seller-wrapper">
                 <div class="thumbnail">
-                  <a>
+                  <Link href="#">
                     <img src="/client/client-1.png" alt="Nft_Profile" />
-                  </a>
+                  </Link>
                 </div>
                 <div class="top-seller-content">
-                  <a>
+                  <Link href="#">
                     <h6 class="name">LAkiba</h6>
-                  </a>
+                  </Link>
                   <span class="count-number">$652,000</span>
                 </div>
               </div>
-              <a class="over-link"></a>
+              <Link href="#" class="over-link"></Link>
             </div>
           </div>
 
@@ -240,18 +240,18 @@ const CreatorOne = ({ creators }) => {
             <div class="top-seller-inner-one explore">
               <div class="top-seller-wrapper">
                 <div class="thumbnail">
-                  <a>
+                  <Link href="#">
                     <img src="/client/client-6.png" alt="Nft_Profile" />
-                  </a>
+                  </Link>
                 </div>
                 <div class="top-seller-content">
-                  <a>
+                  <Link href="#">
                     <h6 class="name">Murkis</h6>
-                  </a>
+                  </Link>
                   <span class="count-number">$2500,000</span>
                 </div>
               </div>
-              <a class="over-link"></a>
+              <Link href="#" class="over-link"></Link>
             </div>
           </div>
 
@@ -264,18 +264,18 @@ const CreatorOne = ({ creators }) => {
             <div class="top-seller-inner-one explore">
               <div class="top-seller-wrapper">
                 <div class="thumbnail varified">
-                  <a>
+                  <Link href="#">
                     <img src="/client/client-1.png" alt="Nft_Profile" />
-                  </a>
+                  </Link>
                 </div>
                 <div class="top-seller-content">
-                  <a>
+                  <Link href="#">
                     <h6 class="name">Mr.Faks</h6>
-                  </a>
+                  </Link>
                   <span class="count-number">$5900,000</span>
                 </div>
               </div>
-              <a class="over-link"></a>
+              <Link href="#" class="over-link"></Link>
             </div>
           </div>
 
@@ -288,18 +288,18 @@ const CreatorOne = ({ creators }) => {
             <div class="top-seller-inner-one explore">
               <div class="top-seller-wrapper">
                 <div class="thumbnail">
-                  <a>
+                  <Link href="#">
                     <img src="/client/client-9.png" alt="Nft_Profile" />
-                  </a>
+                  </Link>
                 </div>
                 <div class="top-seller-content">
-                  <a>
+                  <Link href="#">
                     <h6 class="name">Ranbir</h6>
-                  </a>
+                  </Link>
                   <span class="count-number">$2500,000</span>
                 </div>
               </div>
-              <a class="over-link"></a>
+              <Link href="#" class="over-link"></Link>
             </div>
           </div>
 
@@ -312,18 +312,18 @@ const CreatorOne = ({ creators }) => {
             <div class="top-seller-inner-one explore">
               <div class="top-seller-wrapper">
                 <div class="thumbnail">
-                  <a>
+                  <Link href="#">
                     <img src="/client/client-11.png" alt="Nft_Profile" />
-                  </a>
+                  </Link>
                 </div>
                 <div class="top-seller-content">
-                  <a>
+                  <Link href="#">
                     <h6 class="name">Dabvira</h6>
-                  </a>
+                  </Link>
                   <span class="count-number">$26600,000</span>
                 </div>
               </div>
-              <a class="over-link"></a>
+              <Link href="#" class="over-link"></Link>
             </div>
           </div>
 
@@ -336,18 +336,18 @@ const CreatorOne = ({ creators }) => {
             <div class="top-seller-inner-one explore">
               <div class="top-seller-wrapper">
                 <div class="thumbnail varified">
-                  <a>
+                  <Link href="#">
                     <img src="/client/client-5.png" alt="Nft_Profile" />
-                  </a>
+                  </Link>
                 </div>
                 <div class="top-seller-content">
-                  <a>
+                  <Link href="#">
                     <h6 class="name">Jaki SAh</h6>
-                  </a>
+                  </Link>
                   <span class="count-number">$6500,000</span>
                 </div>
               </div>
-              <a class="over-link"></a>
+              <Link href="#" class="over-link"></Link>
             </div>
           </div>
 
@@ -360,18 +360,18 @@ const CreatorOne = ({ creators }) => {
             <div class="top-seller-inner-one explore">
               <div class="top-seller-wrapper">
                 <div class="thumbnail">
-                  <a>
+                  <Link href="#">
                     <img src="/client/client-10.png" alt="Nft_Profile" />
-                  </a>
+                  </Link>
                 </div>
                 <div class="top-seller-content">
-                  <a>
+                  <Link href="#">
                     <h6 class="name">Torpedo</h6>
-                  </a>
+                  </Link>
                   <span class="count-number">$8500,000</span>
                 </div>
               </div>
-              <a class="over-link"></a>
+              <Link href="#" class="over-link"></Link>
             </div>
           </div>
         </div>

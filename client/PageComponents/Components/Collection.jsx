@@ -45,9 +45,9 @@ const Collection = ({ housing, rental, office, farmhouse }) => {
               data-sal="slide-up"
               data-sal-duration="800"
             >
-              <a class="btn-transparent" href="#">
+              <Link class="btn-transparent" href="#">
                 VIEW ALL
-              </a>
+              </Link>
             </div>
           </div>
         </div>

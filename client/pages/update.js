@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 //INTERNAL IMPORT
 import { CreateOne } from "../PageComponents/CreatePage";
@@ -146,12 +147,13 @@ const Update = () => {
                   </div>
                 </div>
                 {file && (
-                  <a
+                  <Link
+                    href="#"
                     onClick={() => uploadToPinata()}
                     class="btn btn-primary-alta btn-large"
                   >
                     {fileName}
-                  </a>
+                  </Link>
                 )}
               </div>
             </div>
@@ -279,12 +281,13 @@ const Update = () => {
                   </div>
                   <div class="col-lg-12">
                     <div class="button-wrapper">
-                      <a
+                      <Link
+                        href="#"
                         onClick={() => handleSubmit()}
                         class="btn btn-primary-alta btn-large"
                       >
                         {isLoading ? <Loader /> : "Update"}
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>

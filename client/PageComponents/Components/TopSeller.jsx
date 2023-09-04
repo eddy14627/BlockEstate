@@ -1,5 +1,5 @@
 import React from "react";
-
+import Link from "next/link";
 const TopSeller = ({ creators }) => {
   return (
     <div class="rn-top-top-seller-area nice-selector-transparent rn-section-gapTop">
@@ -27,17 +27,17 @@ const TopSeller = ({ creators }) => {
               <div class="top-seller-inner-one">
                 <div class="top-seller-wrapper">
                   <div class="thumbnail varified">
-                    <a href="/author">
+                    <Link href="/author">
                       <img
                         src={`/client/client-${i + 1}.png`}
                         alt="Nft_Profile"
                       />
-                    </a>
+                    </Link>
                   </div>
                   <div class="top-seller-content">
-                    <a href="/author">
+                    <Link href="/author">
                       <h6 class="name">{seller.owner.slice(0, 10)}...</h6>
-                    </a>
+                    </Link>
                     <span class="count-number"> {seller.total} MATIC</span>
                   </div>
                 </div>
@@ -54,17 +54,17 @@ const TopSeller = ({ creators }) => {
             <div class="top-seller-inner-one">
               <div class="top-seller-wrapper">
                 <div class="thumbnail">
-                  <a href="author.html">
+                  <Link href="author.html">
                     <img
                       src="assets/images/client/client-2.png"
                       alt="Nft_Profile"
                     />
-                  </a>
+                  </Link>
                 </div>
                 <div class="top-seller-content">
-                  <a href="author.html">
+                  <Link href="author.html">
                     <h6 class="name">Ms. Parkline</h6>
-                  </a>
+                  </Link>
                   <span class="count-number"> $2300,000 </span>
                 </div>
               </div>
@@ -80,17 +80,17 @@ const TopSeller = ({ creators }) => {
             <div class="top-seller-inner-one">
               <div class="top-seller-wrapper">
                 <div class="thumbnail">
-                  <a href="author.html">
+                  <Link href="author.html">
                     <img
                       src="assets/images/client/client-3.png"
                       alt="Nft_Profile"
                     />
-                  </a>
+                  </Link>
                 </div>
                 <div class="top-seller-content">
-                  <a href="author.html">
+                  <Link href="author.html">
                     <h6 class="name">Methods</h6>
-                  </a>
+                  </Link>
                   <span class="count-number"> $2100,000 </span>
                 </div>
               </div>
@@ -106,17 +106,17 @@ const TopSeller = ({ creators }) => {
             <div class="top-seller-inner-one">
               <div class="top-seller-wrapper">
                 <div class="thumbnail varified">
-                  <a href="author.html">
+                  <Link href="author.html">
                     <img
                       src="assets/images/client/client-4.png"
                       alt="Nft_Profile"
                     />
-                  </a>
+                  </Link>
                 </div>
                 <div class="top-seller-content">
-                  <a href="author.html">
+                  <Link href="author.html">
                     <h6 class="name">Jone sone</h6>
-                  </a>
+                  </Link>
                   <span class="count-number"> $2000,000 </span>
                 </div>
               </div>
@@ -132,17 +132,17 @@ const TopSeller = ({ creators }) => {
             <div class="top-seller-inner-one">
               <div class="top-seller-wrapper">
                 <div class="thumbnail">
-                  <a href="author.html">
+                  <Link href="author.html">
                     <img
                       src="assets/images/client/client-5.png"
                       alt="Nft_Profile"
                     />
-                  </a>
+                  </Link>
                 </div>
                 <div class="top-seller-content">
-                  <a href="author.html">
+                  <Link href="author.html">
                     <h6 class="name">Siddhart</h6>
-                  </a>
+                  </Link>
                   <span class="count-number"> $200,000 </span>
                 </div>
               </div>
@@ -158,17 +158,17 @@ const TopSeller = ({ creators }) => {
             <div class="top-seller-inner-one">
               <div class="top-seller-wrapper">
                 <div class="thumbnail varified">
-                  <a href="author.html">
+                  <Link href="author.html">
                     <img
                       src="assets/images/client/client-6.png"
                       alt="Nft_Profile"
                     />
-                  </a>
+                  </Link>
                 </div>
                 <div class="top-seller-content">
-                  <a href="author.html">
+                  <Link href="author.html">
                     <h6 class="name">Sobuj Mk</h6>
-                  </a>
+                  </Link>
                   <span class="count-number"> $2000,000 </span>
                 </div>
               </div>
@@ -184,17 +184,17 @@ const TopSeller = ({ creators }) => {
             <div class="top-seller-inner-one">
               <div class="top-seller-wrapper">
                 <div class="thumbnail varified">
-                  <a href="author.html">
+                  <Link href="author.html">
                     <img
                       src="assets/images/client/client-7.png"
                       alt="Nft_Profile"
                     />
-                  </a>
+                  </Link>
                 </div>
                 <div class="top-seller-content">
-                  <a href="author.html">
+                  <Link href="author.html">
                     <h6 class="name">Trodband</h6>
-                  </a>
+                  </Link>
                   <span class="count-number"> $2500,000 </span>
                 </div>
               </div>
@@ -210,17 +210,17 @@ const TopSeller = ({ creators }) => {
             <div class="top-seller-inner-one">
               <div class="top-seller-wrapper">
                 <div class="thumbnail">
-                  <a href="author.html">
+                  <Link href="author.html">
                     <img
                       src="assets/images/client/client-8.png"
                       alt="Nft_Profile"
                     />
-                  </a>
+                  </Link>
                 </div>
                 <div class="top-seller-content">
-                  <a href="author.html">
+                  <Link href="author.html">
                     <h6 class="name">Yash</h6>
-                  </a>
+                  </Link>
                   <span class="count-number"> $2500,000 </span>
                 </div>
               </div>
@@ -236,17 +236,17 @@ const TopSeller = ({ creators }) => {
             <div class="top-seller-inner-one">
               <div class="top-seller-wrapper">
                 <div class="thumbnail">
-                  <a href="author.html">
+                  <Link href="author.html">
                     <img
                       src="assets/images/client/client-9.png"
                       alt="Nft_Profile"
                     />
-                  </a>
+                  </Link>
                 </div>
                 <div class="top-seller-content">
-                  <a href="author.html">
+                  <Link href="author.html">
                     <h6 class="name">YASHKIB</h6>
-                  </a>
+                  </Link>
                   <span class="count-number"> $2500,000 </span>
                 </div>
               </div>
@@ -262,17 +262,17 @@ const TopSeller = ({ creators }) => {
             <div class="top-seller-inner-one">
               <div class="top-seller-wrapper">
                 <div class="thumbnail varified">
-                  <a href="author.html">
+                  <Link href="author.html">
                     <img
                       src="assets/images/client/client-10.png"
                       alt="Nft_Profile"
                     />
-                  </a>
+                  </Link>
                 </div>
                 <div class="top-seller-content">
-                  <a href="author.html">
+                  <Link href="author.html">
                     <h6 class="name">Brodband</h6>
-                  </a>
+                  </Link>
                   <span class="count-number"> $2500,000 </span>
                 </div>
               </div>

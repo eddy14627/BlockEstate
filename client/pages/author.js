@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import Link from "next/link";
 //INTERNAL IMPORT
 import {
   AuthorFive,
@@ -12,7 +12,7 @@ import { Header, Footer, Copyright } from "../PageComponents/Components";
 
 import { useStateContext } from "../context";
 
-const author = () => {
+const Author = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [properties, setProperties] = useState([]);
   const [author, setAuthor] = useState([]);
@@ -50,4 +50,4 @@ const author = () => {
   );
 };
 
-export default author;
+export default Author;

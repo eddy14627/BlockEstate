@@ -12,7 +12,7 @@ import {
   Loader,
 } from "../PageComponents/Components";
 
-const creator = () => {
+const Creator = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [properties, setProperties] = useState([]);
 
@@ -42,4 +42,4 @@ const creator = () => {
   );
 };
 
-export default creator;
+export default Creator;

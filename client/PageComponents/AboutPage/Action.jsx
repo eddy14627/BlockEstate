@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const Action = () => {
   return (
@@ -35,12 +36,15 @@ const Action = () => {
                       data-sal-duration="800"
                       data-sal-delay="150"
                     >
-                      <a href="/create" class="btn btn-primary btn-large">
+                      <Link href="/create" class="btn btn-primary btn-large">
                         Create
-                      </a>
-                      <a href="/contact" class="btn btn-primary-alta btn-large">
+                      </Link>
+                      <Link
+                        href="/contact"
+                        class="btn btn-primary-alta btn-large"
+                      >
                         Contact Us
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>

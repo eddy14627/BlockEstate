@@ -1,22 +1,15 @@
 import React from "react";
-
+import Link from "next/link";
 //INTERNAL IMPORT
 import { Header, Footer, Copyright } from "../PageComponents/Components";
-import {
-  Banner,
-  Action,
-  Blog,
-  Quote,
-  Statistick,
-} from "../PageComponents/AboutPage";
+import { Banner, Action, Quote, Statistick } from "../PageComponents/AboutPage";
 
-const about = () => {
+const About = () => {
   return (
     <div class="template-color-1 nft-body-connect">
       <Header />
       <Banner />
       <Action />
-      <Blog />
       <Quote />
       <Statistick />
       <Footer />
@@ -25,4 +18,4 @@ const about = () => {
   );
 };
 
-export default about;
+export default About;

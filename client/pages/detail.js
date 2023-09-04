@@ -20,7 +20,7 @@ import { Loader } from "../PageComponents/Components";
 
 import { useStateContext } from "../context";
 
-const detail = () => {
+const Detail = () => {
   const signer = useSigner();
   const [property, setProperty] = useState();
   const [parsedReviews, setParsedReviews] = useState();
@@ -160,4 +160,4 @@ const detail = () => {
   );
 };
 
-export default detail;
+export default Detail;

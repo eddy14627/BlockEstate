@@ -1,5 +1,5 @@
 import React from "react";
-
+import Link from "next/link";
 const CreateThree = ({ data }) => {
   return (
     <div
@@ -17,7 +17,7 @@ const CreateThree = ({ data }) => {
       <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content share-wrapper">
           <div class="modal-body">
-            <a href="product-details.html" class="rn-collection-inner-one">
+            <Link href="/detail" class="rn-collection-inner-one">
               <div class="collection-wrapper">
                 <div class="collection-big-thumbnail">
                   <img src={data.images} alt="Nft_Profile" />
@@ -44,7 +44,7 @@ const CreateThree = ({ data }) => {
                   <span class="items">{data.price}</span>
                 </div>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

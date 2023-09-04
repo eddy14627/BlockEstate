@@ -1,5 +1,5 @@
 import React from "react";
-
+import Link from "next/link";
 const Copyright = () => {
   return (
     <>
@@ -11,10 +11,10 @@ const Copyright = () => {
                 <span>©2022 BlockEstate, Inc. All rights reserved.</span>
                 <ul class="privacy">
                   <li>
-                    <a href="/privacy">Terms</a>
+                    <Link href="/privacy">Terms</Link>
                   </li>
                   <li>
-                    <a href="/privacy">Privacy Policy</a>
+                    <Link href="/privacy">Privacy Policy</Link>
                   </li>
                 </ul>
               </div>

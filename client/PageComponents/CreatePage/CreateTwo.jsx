@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ethers } from "ethers";
 import axios from "axios";
-
+import Link from "next/link";
 //INTERNAL IMPORT
 import { Loader } from "../Components";
 import { CreateThree } from ".";
@@ -135,12 +135,13 @@ const CreateTwo = () => {
                   </div>
                 </div>
                 {file && (
-                  <a
+                  <Link
+                    href="#"
                     onClick={() => uploadToPinata()}
                     class="btn btn-primary-alta btn-large"
                   >
                     {fileName}
-                  </a>
+                  </Link>
                 )}
               </div>
             </div>
@@ -284,20 +285,21 @@ const CreateTwo = () => {
                   </div>
                   <div class="col-lg-12">
                     <div class="button-wrapper">
-                      <a
+                      <Link
                         href="#"
                         class="btn btn-primary btn-large mr--30"
                         data-bs-toggle="modal"
                         data-bs-target="#collectionModal"
                       >
                         Preview
-                      </a>
-                      <a
+                      </Link>
+                      <Link
+                        href="#"
                         onClick={() => handleSubmit()}
                         class="btn btn-primary-alta btn-large"
                       >
                         {isLoading ? <Loader /> : "Create"}
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>

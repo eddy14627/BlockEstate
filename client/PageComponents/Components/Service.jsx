@@ -1,5 +1,5 @@
 import React from "react";
-
+import Link from "next/link";
 const Service = () => {
   return (
     <div class="rn-service-area rn-section-gapTop">
@@ -31,18 +31,18 @@ const Service = () => {
                 <div class="subtitle">Step-01</div>
                 <div class="content">
                   <h4 class="title">
-                    <a href="#">Set up your wallet</a>
+                    <Link href="#">Set up your wallet</Link>
                   </h4>
                   <p class="description">
                     Powerful features and inclusions, which makes BlockEstate
                     standout, easily customizable and scalable.
                   </p>
-                  <a class="read-more-button" href="#">
+                  <Link class="read-more-button" href="#">
                     <i class="feather-arrow-right"></i>
-                  </a>
+                  </Link>
                 </div>
               </div>
-              <a class="over-link" href="#"></a>
+              <Link class="over-link" href="#"></Link>
             </div>
           </div>
 
@@ -60,18 +60,18 @@ const Service = () => {
                 <div class="subtitle">Step-02</div>
                 <div class="content">
                   <h4 class="title">
-                    <a href="#">Create your collection</a>
+                    <Link href="#">Create your collection</Link>
                   </h4>
                   <p class="description">
                     A great collection of beautiful website templates for your
                     need. Choose the best suitable template.
                   </p>
-                  <a class="read-more-button" href="#">
+                  <Link class="read-more-button" href="#">
                     <i class="feather-arrow-right"></i>
-                  </a>
+                  </Link>
                 </div>
               </div>
-              <a class="over-link" href="#"></a>
+              <Link class="over-link" href="#"></Link>
             </div>
           </div>
 
@@ -89,18 +89,18 @@ const Service = () => {
                 <div class="subtitle">Step-03</div>
                 <div class="content">
                   <h4 class="title">
-                    <a href="#">Add your NFT's</a>
+                    <Link href="#">Add your NFT's</Link>
                   </h4>
                   <p class="description">
                     We've made the template fully responsive, so it looks great
                     on all devices: desktop, tablets and.
                   </p>
-                  <a class="read-more-button" href="#">
+                  <Link class="read-more-button" href="#">
                     <i class="feather-arrow-right"></i>
-                  </a>
+                  </Link>
                 </div>
               </div>
-              <a class="over-link" href="#"></a>
+              <Link class="over-link" href="#"></Link>
             </div>
           </div>
 
@@ -118,18 +118,18 @@ const Service = () => {
                 <div class="subtitle">Step-04</div>
                 <div class="content">
                   <h4 class="title">
-                    <a href="#">Sell Your NFT's</a>
+                    <Link href="#">Sell Your NFT's</Link>
                   </h4>
                   <p class="description">
                     I throw myself down among the tall grass by the stream as I
                     lie close to the earth NFT's.
                   </p>
-                  <a class="read-more-button" href="#">
+                  <Link class="read-more-button" href="#">
                     <i class="feather-arrow-right"></i>
-                  </a>
+                  </Link>
                 </div>
               </div>
-              <a class="over-link" href="#"></a>
+              <Link class="over-link" href="#"></Link>
             </div>
           </div>
         </div>

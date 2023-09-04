@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-
+// import Link from "next/link";
 //INTERNAL IMPORT
 import { Activity } from "../PageComponents/ActivityPage";
 import { Header, Footer, Copyright } from "../PageComponents/Components";
 import { useStateContext } from "../context";
-const active = () => {
-  const [isLoading, setIsLoading] = useState(false);
+const Active = () => {
+  // const [isLoading, setIsLoading] = useState(false);
   const [properties, setProperties] = useState([]);
   const [totalReviews, setTotalReviews] = useState();
 
@@ -19,12 +19,12 @@ const active = () => {
 
   //GET DATA
   const fetchProperty = async () => {
-    setIsLoading(true);
+    // setIsLoading(true);
     const data = await getPropertiesData();
     const reviewsLength = await totalReviewsFunction();
     setTotalReviews(reviewsLength);
     setProperties(data);
-    setIsLoading(false);
+    // setIsLoading(false);
   };
 
   useEffect(() => {
@@ -45,4 +45,4 @@ const active = () => {
   );
 };
 
-export default active;
+export default Active;

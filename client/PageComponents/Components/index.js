@@ -2,7 +2,6 @@ import Header from "./Header";
 import Banner from "./Banner";
 import Live from "./Live";
 import Service from "./Service";
-import Product from "./Product";
 import TopSeller from "./TopSeller";
 import Collection from "./Collection";
 import Footer from "./Footer";
@@ -14,7 +13,6 @@ export {
   Banner,
   Live,
   Service,
-  Product,
   TopSeller,
   Collection,
   Footer,

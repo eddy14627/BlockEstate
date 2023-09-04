@@ -22,16 +22,16 @@ const Activity = ({ properties, totalReviews, popular }) => {
                   <div class="inner">
                     <div class="read-content">
                       <div class="thumbnail">
-                        <a href={`detail?property=${activity.productID}`}>
+                        <Link href={`detail?property=${activity.productID}`}>
                           <img src={activity.image} alt="Nft_Profile" />
-                        </a>
+                        </Link>
                       </div>
                       <div class="content">
-                        <a href={`detail?property=${activity.productID}`}>
+                        <Link href={`detail?property=${activity.productID}`}>
                           <h6 class="title">
                             {activity.title.slice(0, 25)}...
                           </h6>
-                        </a>
+                        </Link>
                         <p>{activity.owner.slice(0, 25)}...</p>
                         <div class="time-maintane">
                           <div class="time data">
@@ -74,7 +74,7 @@ const Activity = ({ properties, totalReviews, popular }) => {
                 <div class="inner">
                   <h3>Popular Property</h3>
                   <div class="sing-filter">
-                    <a href={`/detail?property=${popular}`}>Popular</a>
+                    <Link href={`/detail?property=${popular}`}>Popular</Link>
                   </div>
                 </div>
               </div>

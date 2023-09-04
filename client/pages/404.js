@@ -1,9 +1,10 @@
 import React from "react";
+import Link from "next/link";
 
 //INTERNAL IMPORT
 import { Header, Footer, Copyright } from "../PageComponents/Components";
 
-const pageNotFound = () => {
+const PageNotFound = () => {
   return (
     <div class="template-color-1 nft-body-connect">
       <Header />
@@ -15,9 +16,9 @@ const pageNotFound = () => {
                 <h2 class="large-title">404</h2>
                 <h3 class="title">Page not found!</h3>
                 <p>The page you are looking for not available.</p>
-                <a href="/" class="btn btn-primary btn-large">
+                <Link href="/" class="btn btn-primary btn-large">
                   Go Back To Home
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -46,44 +47,44 @@ const pageNotFound = () => {
             <div class="modal-body">
               <ul class="social-share-default">
                 <li>
-                  <a href="#">
+                  <Link href="#">
                     <span class="icon">
                       {/* <i data-feather="facebook"></i> */}
                     </span>
                     <span class="text">facebook</span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#">
+                  <Link href="#">
                     <span class="icon">
                       {/* <i data-feather="twitter"></i> */}
                     </span>
                     <span class="text">twitter</span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#">
+                  <Link href="#">
                     <span class="icon">
                       {/* <i data-feather="linkedin"></i> */}
                     </span>
                     <span class="text">linkedin</span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#">
+                  <Link href="#">
                     <span class="icon">
                       {/* <i data-feather="instagram"></i> */}
                     </span>
                     <span class="text">instagram</span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#">
+                  <Link href="#">
                     <span class="icon">
                       {/* <i data-feather="youtube"></i> */}
                     </span>
                     <span class="text">youtube</span>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -142,4 +143,4 @@ const pageNotFound = () => {
   );
 };
 
-export default pageNotFound;
+export default PageNotFound;
