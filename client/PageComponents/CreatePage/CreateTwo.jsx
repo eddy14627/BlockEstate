@@ -44,14 +44,19 @@ const CreateTwo = () => {
     setIsLoading(true);
     checkIfImage(form.images, async (exists) => {
       if (exists) {
-        await createPropertyFunction({
-          ...form,
-          price: ethers.utils.parseUnits(form.price, 18),
-        });
-        setIsLoading(false);
+        const imgHash = await uploadToPinata();
+        if (imgHash) {
+          await createPropertyFunction({
+            ...form,
+            images: imgHash,
+            price: ethers.utils.parseUnits(form.price, 18),
+          });
+          setIsLoading(false);
+        }
       } else {
         alert("Provide valid image URL");
         setForm({ ...form, images: "" });
+        setIsLoading(false);
       }
     });
   };
@@ -73,17 +78,19 @@ const CreateTwo = () => {
             "Content-Type ": "multipart/form-data",
           },
         });
-        const ImgHash = `https://gateway.pinata.cloud/ipfs/${response.data.IpfsHash}`;
+        const imgHash = `https://gateway.pinata.cloud/ipfs/${response.data.IpfsHash}`;
 
-        console.log(ImgHash);
-        setForm({ ...form, images: ImgHash });
+        console.log(imgHash);
         setFileName("Image Uploaded");
-        return ImgHash;
+        return imgHash;
       } catch (error) {
         alert("Unable to upload image to Pinata");
+        return null;
       }
     }
+    return null;
   };
+
   const retrieveFile = (event) => {
     const data = event.target.files[0];
 
@@ -140,7 +147,7 @@ const CreateTwo = () => {
                     onClick={() => uploadToPinata()}
                     class="btn btn-primary-alta btn-large"
                   >
-                    {fileName}
+                    <button>{fileName}</button>
                   </Link>
                 )}
               </div>
@@ -263,7 +270,7 @@ const CreateTwo = () => {
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-12">
+                  {/* <div class="col-lg-12">
                     <div class="BlockEstate-information mb--30">
                       <div class="single-notice-setting">
                         <div class="input">
@@ -282,7 +289,7 @@ const CreateTwo = () => {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                   <div class="col-lg-12">
                     <div class="button-wrapper">
                       <Link

@@ -150,8 +150,8 @@ contract RealEstate {
         string memory,
         string memory,
         string memory,
-         address[] memory,
-         string[] memory) {
+        address[] memory,
+        string[] memory) {
         Property memory property = properties[id];
         
         return ( 

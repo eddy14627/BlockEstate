@@ -9,7 +9,7 @@ const Service = () => {
             <h3
               class="title"
               data-sal-delay="150"
-              data-sal="slide-up"
+              data-sal=""
               data-sal-duration="800"
             >
               Create and sell your NFTs
@@ -19,7 +19,7 @@ const Service = () => {
         <div class="row g-5">
           <div class="col-xxl-3 col-lg-4 col-md-6 col-sm-6 col-12">
             <div
-              data-sal="slide-up"
+              data-sal=""
               data-sal-delay="150"
               data-sal-duration="800"
               class="rn-service-one color-shape-7"
@@ -48,7 +48,7 @@ const Service = () => {
 
           <div class="col-xxl-3 col-lg-4 col-md-6 col-sm-6 col-12">
             <div
-              data-sal="slide-up"
+              data-sal=""
               data-sal-delay="200"
               data-sal-duration="800"
               class="rn-service-one color-shape-1"
@@ -77,7 +77,7 @@ const Service = () => {
 
           <div class="col-xxl-3 col-lg-4 col-md-6 col-sm-6 col-12">
             <div
-              data-sal="slide-up"
+              data-sal=""
               data-sal-delay="250"
               data-sal-duration="800"
               class="rn-service-one color-shape-5"
@@ -106,7 +106,7 @@ const Service = () => {
 
           <div class="col-xxl-3 col-lg-4 col-md-6 col-sm-6 col-12">
             <div
-              data-sal="slide-up"
+              data-sal=""
               data-sal-delay="300"
               data-sal-duration="800"
               class="rn-service-one color-shape-6"

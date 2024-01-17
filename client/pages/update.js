@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
@@ -13,6 +13,7 @@ import {
 import { useStateContext } from "../context";
 import { checkIfImage } from "../utils";
 import axios from "axios";
+// import { useStateContext } from "../context";
 
 const categories = [
   "Housing",
@@ -23,9 +24,48 @@ const categories = [
   "country",
 ];
 
+const CustomDropdown = ({ options, value, onChange }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleOptionClick = (option) => {
+    onChange(option);
+    setIsOpen(false);
+  };
+
+  return (
+    <div
+      className="nice-select mb--30"
+      tabIndex="0"
+      onClick={() => setIsOpen(!isOpen)}
+    >
+      <span className="current">{value || "Select Category"}</span>
+      {isOpen && (
+        <ul className="list">
+          {options.map((option, index) => (
+            <li
+              key={index}
+              onClick={() => handleOptionClick(option)}
+              className="option"
+              data-value={option}
+            >
+              {option}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+};
 const Update = () => {
+  useEffect(() => {
+    // import("bootstrap/dist/css/bootstrap.min.css");
+    // Initialize Bootstrap JavaScript after the component is rendered
+    import("bootstrap/dist/js/bootstrap.bundle.min.js");
+  }, []);
   const router = useRouter();
   const { query } = router;
+  // console.log(query.property);
+  const propertyId = query.property;
 
   const [isLoading, setIsLoading] = useState(false);
   const [file, setFile] = useState(null);
@@ -110,6 +150,28 @@ const Update = () => {
 
     event.preventDefault();
   };
+  const { address, contract, getUserPropertiesFunction, getPropertiesData } =
+    useStateContext();
+
+  const fetchProperty = async () => {
+    setIsLoading(true);
+    const data = await getPropertiesData();
+    console.log(data);
+    console.log(propertyId);
+    setForm({
+      propertyTitle: data[propertyId].title,
+      description: data[propertyId].description,
+      category: data[propertyId].category,
+      price: data[propertyId].price,
+      images: data[propertyId].image,
+      propertyAddress: data[propertyId].address,
+    });
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
+    if (contract) fetchProperty();
+  }, [contract]);
 
   return (
     <div class="template-color-1 nft-body-connect">
@@ -172,7 +234,7 @@ const Update = () => {
                           class="name"
                           type="text"
                           required
-                          placeholder="propertyTitle"
+                          placeholder={form.propertyTitle}
                           onChange={(e) =>
                             handleFormFieldChange("propertyTitle", e)
                           }
@@ -191,13 +253,13 @@ const Update = () => {
                           class="url"
                           type="text"
                           required
-                          placeholder={fileName}
+                          placeholder={form.images}
                           onChange={(e) => handleFormFieldChange("images", e)}
                         />
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-12">
+                  {/* <div class="col-lg-12">
                     <div class="collection-single-wized">
                       <label class="title">Category</label>
                       <div class="create-collection-input">
@@ -223,6 +285,54 @@ const Update = () => {
                         </div>
                       </div>
                     </div>
+                    <div className="collection-single-wized">
+                      <label className="title">Category</label>
+                      <div className="create-collection-input">
+                        <select
+                          className="form-select mb--30"
+                          value={form.category}
+                          onChange={(e) => handleFormFieldChange("category", e)}
+                        >
+                          <option value="">Select Category</option>
+                          {categories.map((el, i) => (
+                            <option key={i + 1} value={el}>
+                              {el}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                    </div>
+                  </div> */}
+                  {/* <div className="col-lg-12">
+                    <div className="collection-single-wized">
+                      <label className="title">Category</label>
+                      <div className="create-collection-input">
+                        <select
+                          className="form-select mb--30"
+                          value={form.category}
+                          onChange={(e) => handleFormFieldChange("category", e)}
+                        >
+                          <option value="">Select Category</option>
+                          {categories.map((el, i) => (
+                            <option key={i + 1} value={el}>
+                              {el}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                    </div>
+                  </div> */}
+                  <div className="collection-single-wized">
+                    <label className="title">Category</label>
+                    <div className="create-collection-input">
+                      <CustomDropdown
+                        options={categories}
+                        value={form.category}
+                        onChange={(selectedCategory) =>
+                          setForm({ ...form, category: selectedCategory })
+                        }
+                      />
+                    </div>
                   </div>
                   <div class="col-lg-12">
                     <div class="collection-single-wized">
@@ -233,7 +343,7 @@ const Update = () => {
                         <textarea
                           id="description"
                           class="text-area"
-                          placeholder="description"
+                          placeholder={form.description}
                           onChange={(e) =>
                             handleFormFieldChange("description", e)
                           }
@@ -251,7 +361,7 @@ const Update = () => {
                           id="wallet"
                           class="url"
                           type="text"
-                          placeholder="propertyAddress"
+                          placeholder={form.propertyAddress}
                           onChange={(e) =>
                             handleFormFieldChange("propertyAddress", e)
                           }
@@ -260,7 +370,7 @@ const Update = () => {
                     </div>
                   </div>
                   <div class="col-lg-12">
-                    <div class="BlockEstate-information mb--30">
+                    {/* <div class="BlockEstate-information mb--30">
                       <div class="single-notice-setting">
                         <div class="input">
                           <input
@@ -277,7 +387,7 @@ const Update = () => {
                           <p>Explicit & sensitive content</p>
                         </div>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                   <div class="col-lg-12">
                     <div class="button-wrapper">

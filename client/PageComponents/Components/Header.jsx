@@ -80,7 +80,7 @@ const Header = () => {
               </div>
             </div>
             <div class="header-right">
-              <div class="setting-option d-none d-lg-block">
+              {/* <div class="setting-option d-none d-lg-block">
                 <form class="search-form-wrapper" action="#">
                   <input
                     type="search"
@@ -93,8 +93,8 @@ const Header = () => {
                     </button>
                   </div>
                 </form>
-              </div>
-              <div class="setting-option rn-icon-list d-block d-lg-none">
+              </div> */}
+              {/* <div class="setting-option rn-icon-list d-block d-lg-none">
                 <div class="icon-box search-mobile-icon">
                   <button>
                     <i class="feather-search"></i>
@@ -113,7 +113,7 @@ const Header = () => {
                     <input type="text" placeholder="Search ..." />
                   </div>
                 </form>
-              </div>
+              </div> */}
 
               {/* connect wallet */}
 
@@ -136,13 +136,6 @@ const Header = () => {
               )}
 
               {/* END connect wallet */}
-              <div class="setting-option rn-icon-list notification-badge">
-                <div class="icon-box">
-                  <Link href="#">
-                    <i class="feather-bell"></i>
-                  </Link>
-                </div>
-              </div>
 
               {address ? (
                 <div>

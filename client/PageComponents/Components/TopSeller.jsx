@@ -9,7 +9,7 @@ const TopSeller = ({ creators }) => {
             <h3
               class="title"
               data-sal-delay="150"
-              data-sal="slide-up"
+              data-sal=""
               data-sal-duration="800"
             >
               Sellers

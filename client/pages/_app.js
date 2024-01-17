@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/globals.css";
 import Script from "next/script";
+
 import { ChainId, ThirdwebProvider } from "@thirdweb-dev/react";
 import { StateContextProvider } from "../context";
 // internal imports
@@ -33,7 +34,7 @@ const App = ({ Component, pageProps }) => {
       <Script src="/js/vendor/count-down.js" strategy="beforeInteractive" />
       <Script src="/js/vendor/isotop.js" strategy="beforeInteractive" />
       <Script src="/js/vendor/imageloaded.js" strategy="beforeInteractive" />
-      {/* {/* <Script src="/js/vendor/backtoTop.js" strategy="beforeInteractive" /  */}
+      <Script src="/js/vendor/backtoTop.js" strategy="beforeInteractive" />
       <Script src="/js/vendor/odometer.js" strategy="beforeInteractive" />
       <Script src="/js/vendor/jquery-appear.js" strategy="beforeInteractive" />
       <Script src="/js/vendor/scrolltrigger.js" strategy="beforeInteractive" />

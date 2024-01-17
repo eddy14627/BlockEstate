@@ -15,11 +15,11 @@ const AuthorTwo = ({ address, author }) => {
                 <div class="rn-author-info-content">
                   <h4 class="title">{address?.slice(0, 20)}...</h4>
                   <Link href="#" class="social-follw">
-                    {/* <i data-feather="twitter"></i> */}
-                    <span class="user-name">it0bsession</span>
+                    <i data-feather="twitter"></i>
+                    <span class="user-name">its Obsession</span>
                   </Link>
                   <div class="follow-area">
-                    <div class="follow followers">
+                    {/* <div class="follow followers">
                       <span>
                         186k{" "}
                         <Link href="#" class="color-body">
@@ -31,9 +31,9 @@ const AuthorTwo = ({ address, author }) => {
                       <span>
                         {author.length} <Link href="#">Owned Property</Link>
                       </span>
-                    </div>
+                    </div> */}
                   </div>
-                  <div class="author-button-area">
+                  {/* <div class="author-button-area">
                     <span class="btn at-follw follow-button">Follow</span>
                     <div class="count at-follw">
                       <div class="share-btn share-btn-activation dropdown">
@@ -77,7 +77,7 @@ const AuthorTwo = ({ address, author }) => {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

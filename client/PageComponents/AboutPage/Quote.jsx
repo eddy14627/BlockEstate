@@ -2,29 +2,19 @@ import React from "react";
 
 const Quote = () => {
   return (
-    <div class="rn-about-Quote-area rn-section-gapTop">
-      <div class="container">
-        <div class="row g-5 d-flex align-items-center">
-          <div class="col-lg-6">
-            <div class="rn-about-title-wrapper">
-              <h3
-                class="title"
-                data-sal="slide-up"
-                data-sal-duration="800"
-                data-sal-delay="150"
-              >
+    <div className="rn-about-Quote-area rn-section-gapTop">
+      <div className="container">
+        <div className="row g-5 d-flex align-items-center">
+          <div className="col-lg-6">
+            <div className="rn-about-title-wrapper">
+              <h3 className="title">
                 Create, Sell well & Collect your Wonderful NFTs at BlockEstate
                 Very Fast
               </h3>
             </div>
           </div>
-          <div class="col-lg-6">
-            <div
-              class="rn-about-wrapper"
-              data-sal="slide-up"
-              data-sal-duration="800"
-              data-sal-delay="150"
-            >
+          <div className="col-lg-6">
+            <div className="rn-about-wrapper">
               <p>
                 The NFTs is a one-trick pony that climbed the ladders of success
                 in recent years. The growth of NFTs is tremendous, and according

@@ -32,7 +32,7 @@ const Collection = ({ housing, rental, office, farmhouse }) => {
             <h3
               class="title mb--0"
               data-sal-delay="150"
-              data-sal="slide-up"
+              data-sal=""
               data-sal-duration="800"
             >
               Top Collection
@@ -42,7 +42,7 @@ const Collection = ({ housing, rental, office, farmhouse }) => {
             <div
               class="view-more-btn text-start text-sm-end"
               data-sal-delay="150"
-              data-sal="slide-up"
+              data-sal=""
               data-sal-duration="800"
             >
               <Link class="btn-transparent" href="#">
@@ -56,7 +56,7 @@ const Collection = ({ housing, rental, office, farmhouse }) => {
           {topCollection.map((collection, i) => (
             <div
               key={i + 1}
-              data-sal="slide-up"
+              data-sal=""
               data-sal-delay="150"
               data-sal-duration="800"
               class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12"

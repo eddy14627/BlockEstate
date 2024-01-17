@@ -1,80 +1,96 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
-
-// internal import
 import { getTopCreators } from "../../utils";
 
-const Activity = ({ properties, totalReviews, popular }) => {
+const Activity = ({ properties, totalReviews }) => {
   const creator = getTopCreators(properties);
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [filteredProperties, setFilteredProperties] = useState(properties);
+
+  useEffect(() => {
+    // Filter properties based on the selected category
+    if (selectedCategory === "All") {
+      setFilteredProperties(properties);
+    } else {
+      const filtered = properties.filter(
+        (property) => property.category === selectedCategory
+      );
+      setFilteredProperties(filtered);
+    }
+  }, [selectedCategory, properties]);
 
   return (
-    <div class="rn-activity-area rn-section-gapTop">
-      <div class="container">
-        <div class="row mb--30">
-          <h3 class="title">All Acivities</h3>
+    <div className="rn-activity-area rn-section-gapTop">
+      <div className="container">
+        <div className="row mb--30">
+          <h3 className="title">All Activities</h3>
         </div>
-        <div class="row g-6 activity-direction">
-          <div class="col-lg-8 mb_dec--15">
-            {properties?.map((activity, i) => {
-              console.log("activity : ", activity);
-              return (
-                <div class="single-activity-wrapper">
-                  <div class="inner">
-                    <div class="read-content">
-                      <div class="thumbnail">
+        <div className="row g-6 activity-direction">
+          <div className="col-lg-8 mb_dec--15">
+            {filteredProperties.length === 0 ? (
+              <p>No property of this type</p>
+            ) : (
+              filteredProperties.map((activity, i) => (
+                <div className="single-activity-wrapper" key={i}>
+                  <div className="inner">
+                    <div className="read-content">
+                      <div className="thumbnail">
                         <Link href={`detail?property=${activity.productID}`}>
                           <img src={activity.image} alt="Nft_Profile" />
                         </Link>
                       </div>
-                      <div class="content">
+                      <div className="content">
                         <Link href={`detail?property=${activity.productID}`}>
-                          <h6 class="title">
-                            {activity.title.slice(0, 25)}...
-                          </h6>
+                          <h6 className="title">{activity.title.slice(0)}</h6>
                         </Link>
                         <p>{activity.owner.slice(0, 25)}...</p>
-                        <div class="time-maintane">
-                          <div class="time data">
-                            {/* <i data-feather="clock"></i> */}
-                            <span>{i + 1}:30 PM</span>
+                        <div className="time-maintane">
+                          <div className="user-area data">
+                            {activity.address}
                           </div>
-                          <div class="user-area data">{activity.address}</div>
                         </div>
                       </div>
                     </div>
-                    <div class="icone-area">
+                    <div className="icone-area">
                       {/* <i data-feather="message-circle"></i> */}
                     </div>
                   </div>
                 </div>
-              );
-            })}
+              ))
+            )}
           </div>
-          <div class="col-lg-4">
-            <div class="filter-wrapper">
-              <div class="widge-wrapper rbt-sticky-top-adjust">
-                <div class="inner">
+          <div className="col-lg-4">
+            <div className="filter-wrapper">
+              <div className="widge-wrapper rbt-sticky-top-adjust">
+                <div className="inner">
                   <h3>Analytic</h3>
-                  <div class="sing-filter">
+                  <div className="sing-filter">
                     <button>Total Property : {properties.length}</button>
                     <button>Users : {creator.length}</button>
                     <button>Reviews : {totalReviews}</button>
                   </div>
                 </div>
-                <div class="inner">
+                <div className="inner">
                   <h3>Available Category</h3>
-                  <div class="sing-filter">
-                    <button>Housing</button>
-                    <button>Rental</button>
-                    <button>Office</button>
-                    <button>Commercial</button>
-                    <button>Country</button>
-                  </div>
-                </div>
-                <div class="inner">
-                  <h3>Popular Property</h3>
-                  <div class="sing-filter">
-                    <Link href={`/detail?property=${popular}`}>Popular</Link>
+                  <div className="sing-filter">
+                    <button onClick={() => setSelectedCategory("All")}>
+                      All
+                    </button>
+                    <button onClick={() => setSelectedCategory("Housing")}>
+                      Housing
+                    </button>
+                    <button onClick={() => setSelectedCategory("Rental")}>
+                      Rental
+                    </button>
+                    <button onClick={() => setSelectedCategory("Office")}>
+                      Office
+                    </button>
+                    <button onClick={() => setSelectedCategory("Commercial")}>
+                      Commercial
+                    </button>
+                    <button onClick={() => setSelectedCategory("Country")}>
+                      Country
+                    </button>
                   </div>
                 </div>
               </div>
