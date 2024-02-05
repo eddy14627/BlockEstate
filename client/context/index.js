@@ -1,4 +1,4 @@
-import React, { useState, useContext, createContext } from "react";
+import React, { useState, useContext, createContext, useEffect } from "react";
 
 import {
   useAddress,
@@ -17,23 +17,28 @@ import { ethers } from "ethers";
 const StateContext = createContext();
 
 export const StateContextProvider = ({ children }) => {
+  const [userBlance, setUserBlance] = useState();
   // const { contract } = useContract(
-  //   "0x37E5080006f4546E4250603EB677387eb8E20136"
+  //   "0x8301C7eEf6090D58B7D45D47752f306CD90a3491"
+  // );
+  // const { contract } = useContract(
+  //   "0x3233EF78969B185109379Eb0EED61ca02d9E27BD"
   // );
   const { contract } = useContract(
-    "0x513E53982884E20dD28798819E9c411D20493ea9"
+    "0x38b91AFA011820fc0ADf016EDC95c005e64560C9"
   );
+
   const address = useAddress();
   const connect = useMetamask();
 
   //FRONTEND
   const disconnect = useDisconnect();
   const signer = useSigner();
-  const [userBlance, setUserBlance] = useState();
 
   //FUNCTION
 
   //CREATE PROPERTY
+
   const createPropertyFunction = async (form) => {
     const {
       propertyTitle,
@@ -45,7 +50,9 @@ export const StateContextProvider = ({ children }) => {
     } = form;
 
     try {
+      // taking fixed listing price saved on contract
       const listingPrice = await contract.call("listingPrice");
+
       const data = await contract.call("listProperty", [
         address,
         price,
@@ -134,6 +141,7 @@ export const StateContextProvider = ({ children }) => {
 
   //ADD REVIEW
   const { mutateAsync: addReview } = useContractWrite(contract, "addReview");
+
   const addReviewFunction = async (from) => {
     const { productID, rating, comment } = from;
 
@@ -150,6 +158,7 @@ export const StateContextProvider = ({ children }) => {
 
   //REVIEW - LIKE
   const { mutateAsync: likeReview } = useContractWrite(contract, "likeReview");
+
   const likeReviewFunction = async (from) => {
     const { productID, reviewIndex } = from;
     console.log("like function : ", from);
@@ -202,6 +211,25 @@ export const StateContextProvider = ({ children }) => {
     contract,
     "getHighestratedProduct"
   );
+
+  //getHighestRatedProduct()
+  const isUserVerified = async (userAddress) => {
+    console.log(userAddress);
+    const flag = await contract.call("isUserVerified", [userAddress]);
+    return flag;
+  };
+
+  //getAllUnverifiedUsers
+  const getAllUnverifiedUsers = async () => {
+    //ALL PROPERTIES
+    const users = await contract.call("getAllUnverifiedUsers");
+    console.log("users", users);
+    const UnverifiedUsers = users.map((user, i) => ({
+      address: user.walletAddress,
+      document: user.document,
+    }));
+    return UnverifiedUsers;
+  };
 
   //getProductReviews()
   const getProductReviewsFunction = async (productId) => {
@@ -318,6 +346,67 @@ export const StateContextProvider = ({ children }) => {
     { subscribe: false }
   );
 
+  //VERIFICATION
+  const { mutateAsync: verificationRequest } = useContractWrite(
+    contract,
+    "verificationRequest"
+  );
+
+  const verificationRequestFunction = async (document) => {
+    const verificationDocument = document.document;
+    try {
+      console.log("document", document);
+      console.log("request function", verificationRequest);
+      console.log("document", verificationDocument);
+
+      const data = await verificationRequest({ args: [verificationDocument] });
+      console.info("contract call success", data);
+    } catch (err) {
+      console.error("contract call failure", err);
+    }
+  };
+
+  const { mutateAsync: verifyUser } = useContractWrite(contract, "verifyUser");
+
+  const verifyUserFunction = async (user) => {
+    try {
+      const data = await verifyUser({ args: [user] });
+      console.info("contract call success", data);
+    } catch (err) {
+      console.error("contract call failure", err);
+    }
+  };
+
+  const { mutateAsync: verifyProperty } = useContractWrite(
+    contract,
+    "verifyProperty"
+  );
+
+  const verifyPropertyFunction = async (productId) => {
+    try {
+      const data = await verifyProperty({ args: [productId] });
+      console.info("contract call success", data);
+    } catch (err) {
+      console.error("contract call failure", err);
+    }
+  };
+
+  const { mutateAsync: verifyContract } = useContractWrite(
+    contract,
+    "verifyContract"
+  );
+
+  const verifyContractFunction = async (productId, buyer, seller) => {
+    try {
+      const data = await verifyContract({
+        args: [productId, buyer, seller],
+      });
+      console.info("contract call success", data);
+    } catch (err) {
+      console.error("contract call failure", err);
+    }
+  };
+
   return (
     <StateContext.Provider
       value={{
@@ -344,6 +433,13 @@ export const StateContextProvider = ({ children }) => {
         getHighestRatedProduct,
         //STATE VARIABLE
         userBlance,
+        //VERIFICATION
+        isUserVerified,
+        verifyUserFunction,
+        verifyPropertyFunction,
+        verifyContractFunction,
+        verificationRequestFunction,
+        getAllUnverifiedUsers,
       }}
     >
       {children}

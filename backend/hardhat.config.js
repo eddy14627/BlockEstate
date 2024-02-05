@@ -2,7 +2,7 @@ require("@matterlabs/hardhat-zksync-solc");
 
 /** @type import('hardhat/config').HardhatUserConfig */
 const PRIVATE_KEY =
-  "d9b745420c2b9a9e8d1b0d909d599e226c1ef1ca072feecec7eab8bdb607afe5";
+  "2ae3e619b946f9c7a3c6fbdc54ef59527daa5486115d20204fc255108a0f5740";
 const RPC_URL = "https://rpc.ankr.com/polygon_mumbai";
 module.exports = {
   defaultNetwork: "polygon_mumbai",

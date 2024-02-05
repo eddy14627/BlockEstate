@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ethers } from "ethers";
 import axios from "axios";
 import Link from "next/link";
@@ -23,9 +23,13 @@ const CreateTwo = () => {
   const [file, setFile] = useState(null);
   const [diplayImg, setDiplayImg] = useState(null);
   const [fileName, setFileName] = useState("Upload Image");
+  const [isUserVerified, setIsUserVerified] = useState(false);
 
-  const { address, contract, connect, createPropertyFunction } =
-    useStateContext();
+  const {
+    address,
+    createPropertyFunction,
+    isUserVerified: checkUserVerified,
+  } = useStateContext();
 
   const [form, setForm] = useState({
     propertyTitle: "",
@@ -108,169 +112,181 @@ const CreateTwo = () => {
     event.preventDefault();
   };
 
+  const fetchData = async () => {
+    const flag = await checkUserVerified(address);
+    setIsUserVerified(flag);
+  };
+
+  useEffect(() => {
+    if (address) {
+      fetchData();
+    }
+  }, [address]);
+
   return (
     <>
-      <div class="creat-collection-area pt--80">
-        <div class="container">
-          <div class="row g-5 ">
-            <div class="col-lg-3 offset-1 ml_md--0 ml_sm--0">
-              <div class="collection-single-wized banner">
-                <label class="title required">Property image</label>
+      {isUserVerified ? (
+        <div class="creat-collection-area pt--80">
+          <div class="container">
+            <div class="row g-5 ">
+              <div class="col-lg-3 offset-1 ml_md--0 ml_sm--0">
+                <div class="collection-single-wized banner">
+                  <label class="title required">Property image</label>
 
-                <div class="create-collection-input logo-image">
-                  <div class="logo-c-image logo">
-                    <img
-                      id="rbtinput1"
-                      src={diplayImg || "/profile/profile-01.jpg"}
-                      alt="Profile-NFT"
-                    />
-                    <label for="fatima" title="No File Choosen">
-                      <span class="text-center color-white">
-                        <i class="feather-edit"></i>
-                      </span>
-                    </label>
-                  </div>
-                  <div class="button-area">
-                    <div class="brows-file-wrapper">
-                      <input
-                        name="fatima"
-                        id="fatima"
-                        type="file"
-                        onChange={retrieveFile}
+                  <div class="create-collection-input logo-image">
+                    <div class="logo-c-image logo">
+                      <img
+                        id="rbtinput1"
+                        src={diplayImg || "/profile/profile-01.jpg"}
+                        alt="Profile-NFT"
                       />
+                      <label for="fatima" title="No File Choosen">
+                        <span class="text-center color-white">
+                          <i class="feather-edit"></i>
+                        </span>
+                      </label>
+                    </div>
+                    <div class="button-area">
+                      <div class="brows-file-wrapper">
+                        <input
+                          name="fatima"
+                          id="fatima"
+                          type="file"
+                          onChange={retrieveFile}
+                        />
+                      </div>
                     </div>
                   </div>
+                  {file && (
+                    <Link
+                      href="#"
+                      onClick={() => uploadToPinata()}
+                      class="btn btn-primary-alta btn-large"
+                    >
+                      <button>{fileName}</button>
+                    </Link>
+                  )}
                 </div>
-                {file && (
-                  <Link
-                    href="#"
-                    onClick={() => uploadToPinata()}
-                    class="btn btn-primary-alta btn-large"
-                  >
-                    <button>{fileName}</button>
-                  </Link>
-                )}
               </div>
-            </div>
 
-            <div class="col-lg-7">
-              <div class="create-collection-form-wrapper">
-                <div class="row">
-                  <div class="col-lg-6">
-                    <div class="collection-single-wized">
-                      <label for="name" class="title required">
-                        Property Title
-                      </label>
-                      <div class="create-collection-input">
-                        <input
-                          id="name"
-                          class="name"
-                          type="text"
-                          required
-                          placeholder="propertyTitle"
-                          onChange={(e) =>
-                            handleFormFieldChange("propertyTitle", e)
-                          }
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-6">
-                    <div class="collection-single-wized">
-                      <label for="url" class="title">
-                        Image
-                      </label>
-                      <div class="create-collection-input">
-                        <input
-                          id="url"
-                          class="url"
-                          type="text"
-                          required
-                          placeholder={fileName}
-                          onChange={(e) => handleFormFieldChange("images", e)}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-12">
-                    <div class="collection-single-wized">
-                      <label class="title">Category</label>
-                      <div class="create-collection-input">
-                        <div class="nice-select mb--30" tabindex="0">
-                          <span class="current">Add Category</span>
-                          <ul class="list">
-                            {categories.map((el, i) => (
-                              <li
-                                key={i + 1}
-                                onClick={() =>
-                                  setForm({
-                                    ...form,
-                                    category: el,
-                                  })
-                                }
-                                data-value="Housing"
-                                class="option"
-                              >
-                                {el}
-                              </li>
-                            ))}
-                          </ul>
+              <div class="col-lg-7">
+                <div class="create-collection-form-wrapper">
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="collection-single-wized">
+                        <label for="name" class="title required">
+                          Property Title
+                        </label>
+                        <div class="create-collection-input">
+                          <input
+                            id="name"
+                            class="name"
+                            type="text"
+                            required
+                            placeholder="propertyTitle"
+                            onChange={(e) =>
+                              handleFormFieldChange("propertyTitle", e)
+                            }
+                          />
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="col-lg-12">
-                    <div class="collection-single-wized">
-                      <label for="description" class="title">
-                        Description
-                      </label>
-                      <div class="create-collection-input">
-                        <textarea
-                          id="description"
-                          class="text-area"
-                          placeholder="description"
-                          onChange={(e) =>
-                            handleFormFieldChange("description", e)
-                          }
-                        ></textarea>
+                    <div class="col-lg-6">
+                      <div class="collection-single-wized">
+                        <label for="url" class="title">
+                          Image
+                        </label>
+                        <div class="create-collection-input">
+                          <input
+                            id="url"
+                            class="url"
+                            type="text"
+                            required
+                            placeholder={fileName}
+                            onChange={(e) => handleFormFieldChange("images", e)}
+                          />
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="col-lg-6">
-                    <div class="collection-single-wized">
-                      <label for="earning" class="title">
-                        Price
-                      </label>
-                      <div class="create-collection-input">
-                        <input
-                          id="earning"
-                          class="url"
-                          type="number"
-                          placeholder="price"
-                          onChange={(e) => handleFormFieldChange("price", e)}
-                        />
+                    <div class="col-lg-12">
+                      <div class="collection-single-wized">
+                        <label class="title">Category</label>
+                        <div class="create-collection-input">
+                          <div class="nice-select mb--30" tabindex="0">
+                            <span class="current">Add Category</span>
+                            <ul class="list">
+                              {categories.map((el, i) => (
+                                <li
+                                  key={i + 1}
+                                  onClick={() =>
+                                    setForm({
+                                      ...form,
+                                      category: el,
+                                    })
+                                  }
+                                  data-value="Housing"
+                                  class="option"
+                                >
+                                  {el}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="col-lg-6">
-                    <div class="collection-single-wized">
-                      <label for="wallet" class="title">
-                        Property Address
-                      </label>
-                      <div class="create-collection-input">
-                        <input
-                          id="wallet"
-                          class="url"
-                          type="text"
-                          placeholder="propertyAddress"
-                          onChange={(e) =>
-                            handleFormFieldChange("propertyAddress", e)
-                          }
-                        />
+                    <div class="col-lg-12">
+                      <div class="collection-single-wized">
+                        <label for="description" class="title">
+                          Description
+                        </label>
+                        <div class="create-collection-input">
+                          <textarea
+                            id="description"
+                            class="text-area"
+                            placeholder="description"
+                            onChange={(e) =>
+                              handleFormFieldChange("description", e)
+                            }
+                          ></textarea>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  {/* <div class="col-lg-12">
+                    <div class="col-lg-6">
+                      <div class="collection-single-wized">
+                        <label for="earning" class="title">
+                          Price
+                        </label>
+                        <div class="create-collection-input">
+                          <input
+                            id="earning"
+                            class="url"
+                            type="number"
+                            placeholder="price"
+                            onChange={(e) => handleFormFieldChange("price", e)}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="collection-single-wized">
+                        <label for="wallet" class="title">
+                          Property Address
+                        </label>
+                        <div class="create-collection-input">
+                          <input
+                            id="wallet"
+                            class="url"
+                            type="text"
+                            placeholder="propertyAddress"
+                            onChange={(e) =>
+                              handleFormFieldChange("propertyAddress", e)
+                            }
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    {/* <div class="col-lg-12">
                     <div class="BlockEstate-information mb--30">
                       <div class="single-notice-setting">
                         <div class="input">
@@ -290,23 +306,24 @@ const CreateTwo = () => {
                       </div>
                     </div>
                   </div> */}
-                  <div class="col-lg-12">
-                    <div class="button-wrapper">
-                      <Link
-                        href="#"
-                        class="btn btn-primary btn-large mr--30"
-                        data-bs-toggle="modal"
-                        data-bs-target="#collectionModal"
-                      >
-                        Preview
-                      </Link>
-                      <Link
-                        href="#"
-                        onClick={() => handleSubmit()}
-                        class="btn btn-primary-alta btn-large"
-                      >
-                        {isLoading ? <Loader /> : "Create"}
-                      </Link>
+                    <div class="col-lg-12">
+                      <div class="button-wrapper">
+                        <Link
+                          href="#"
+                          class="btn btn-primary btn-large mr--30"
+                          data-bs-toggle="modal"
+                          data-bs-target="#collectionModal"
+                        >
+                          Preview
+                        </Link>
+                        <Link
+                          href="#"
+                          onClick={() => handleSubmit()}
+                          class="btn btn-primary-alta btn-large"
+                        >
+                          {isLoading ? <Loader /> : "Create"}
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -314,7 +331,21 @@ const CreateTwo = () => {
             </div>
           </div>
         </div>
-      </div>
+      ) : (
+        <div
+          style={{
+            textAlign: "center",
+            margin: "20px",
+            padding: "20px",
+            backgroundColor: "#FFFFFF",
+            color: "#000000",
+            borderRadius: "5px",
+          }}
+        >
+          <p>Not Allowed! Please wait until your account is verified.</p>
+        </div>
+      )}
+
       <CreateThree data={form} />
     </>
   );

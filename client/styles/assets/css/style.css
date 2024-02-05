@@ -12294,6 +12294,32 @@ span.rn-badge-card::before {
   animation: customOne 1.2s infinite;
 }
 
+/* Add these styles to your CSS file */
+
+.accept-button,
+.reject-button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.accept-button {
+  background-color: #4caf50; /* Green */
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.reject-button {
+  background-color: #f44336; /* Red */
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Adjust the margin and padding values based on your design preferences */
+
 /*------------------------------
     Popup Menu Styles  
 --------------------------------*/
@@ -19644,6 +19670,51 @@ button .small-image {
     width: 430px;
     height: auto;
   }
+}
+
+/* Add these styles to your CSS file */
+
+.read-content {
+  display: flex;
+  align-items: center;
+}
+
+.thumbnail {
+  margin-right: 10px; /* Adjust the margin as needed */
+}
+
+.thumbnail svg {
+  font-size: 24px; /* Increase the size of the eye icon */
+  cursor: pointer;
+}
+
+.content {
+  flex-grow: 1;
+}
+
+.user-area {
+  font-size: 18px; /* Increase the size of the user address */
+  margin-bottom: 10px; /* Add margin between user address and buttons */
+}
+
+.accept-button,
+.reject-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px; /* Adjust the margin between buttons */
+}
+
+.accept-button {
+  background-color: #4caf50; /* Green */
+  color: white;
+}
+
+.reject-button {
+  background-color: #f44336; /* Red */
+  color: white;
 }
 
 .lg-product-wrapper .inner .thumbnail img:hover {

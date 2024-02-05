@@ -3,7 +3,7 @@ pragma solidity ^0.8.9;
 
 contract RealEstate {
 
-    // state Variable
+    // State Variables
     struct Property {
         uint256 productID;
         address owner;
@@ -17,18 +17,30 @@ contract RealEstate {
         string[] reviews;
     }
 
-    // mapping 
-    address payable contractOwner = payable(0x37E5080006f4546E4250603EB677387eb8E20136);
+    struct User {
+        address walletAddress;
+        string document;
+        bool status;
+    }
+    // Mapping 
+    address payable contractOwner = payable(0x4F5aAFF81fb285063b3c293da2Be5F2FA9245A00);
+    // address payable contractOwner = payable(0x4F5aAFF81fb285063b3c293da2Be5F2FA9245A00);
     uint256 public listingPrice = 0.025 ether;
     mapping(uint256 => Property) private properties;
     uint256 public propertyIndex;
 
-    // events
-    event PropertyListed(uint256 indexed id , address indexed owner , uint256 price);
-    event PropertySold(uint256 indexed id , address indexed oldOwner , address indexed newOwner , uint256 price);
-    event PropertyResold(uint256 indexed id , address indexed oldOwner , address indexed newOwner , uint256 price);
-    
-    // reviews section
+    // Events
+    event PropertyListed(uint256 indexed id, address indexed owner, uint256 price);
+    event PropertySold(uint256 indexed id, address indexed oldOwner, address indexed newOwner, uint256 price);
+    event PropertyResold(uint256 indexed id, address indexed oldOwner, address indexed newOwner, uint256 price);
+
+    // Events for verification and inspection
+    event UserVerificationRequested(address indexed user, string document);
+    event UserVerified(address indexed user, string document);
+    event PropertyVerified(uint256 indexed id, address indexed owner);
+    event ContractVerified(uint256 indexed id, address indexed buyer, address indexed seller);
+
+    // Reviews Section
     struct Review {
         address reviewer;
         uint256 productId;
@@ -44,27 +56,139 @@ contract RealEstate {
     }
 
     mapping(uint256 => Review[]) private reviews;
-    mapping (address => uint256[]) private userReviews;
-    mapping (uint256 => Product) private products;
+    mapping(address => uint256[]) private userReviews;
+    mapping(uint256 => Product) private products;
 
     uint256 public reviewsCounter;
 
-    event ReviewAdded(uint256 indexed productId , address indexed reviewer , uint256 rating , string comment);
-    event ReviewLiked(uint256 indexed proudctId , uint256 indexed reviewIndex , address indexed liker , uint256 likes);
+    event ReviewAdded(uint256 indexed productId, address indexed reviewer, uint256 rating, string comment);
+    event ReviewLiked(uint256 indexed proudctId, uint256 indexed reviewIndex, address indexed liker, uint256 likes);
 
+    // Roles
+    address public propertyInspector = 0x5466eFf6d8F7779e757060eF147c56be39beB1f0;
+    address public contractInspector = 0x21051Cfae8C508f31aF3b2A799eC0F4334575Fb6;
 
+    // User Verification
+    struct UnverifiedUser {
+        address walletAddress;
+        bool status;
+        bool isReqSend;
+        string document;
+    }
 
-      modifier onlyOwner() {
+    mapping(address => UnverifiedUser) private unverifiedUsers; // Users who requested verification
+    mapping(address => bool) private verifiedUsers; // Users who are verified
+    address[] listOfUsers;
+    uint userCount = 0;
+
+    modifier onlyPropertyInspector() {
         require(
-            msg.sender == contractOwner,
-            "only owner of the contract can change the listing price"
+            msg.sender == propertyInspector,
+            "Only Property Inspector can perform this action"
         );
         _;
     }
+
+    modifier onlyContractInspector() {
+        require(
+            msg.sender == contractInspector,
+            "Only Contract Inspector can perform this action"
+        );
+        _;
+    }
+
+    modifier onlyOwner() {
+        require(
+            msg.sender == contractOwner,
+            "Only the owner of the contract can change the listing price"
+        );
+        _;
+    }
+
+    // check user verified or not
+ function getAllUnverifiedUsers() external view returns (UnverifiedUser[] memory) {
+
+    uint unverifiedCount = 0;
+    // Count unverified users
+    for (uint256 i = 0; i < userCount; i++) {
+        address user = listOfUsers[i];
+        if (!verifiedUsers[user] && unverifiedUsers[user].status) {
+            unverifiedCount++;
+        }
+    }
+
+    // Create array with the counted size
+    UnverifiedUser[] memory unverifiedUsersList = new UnverifiedUser[](unverifiedCount);
+
+    // Populate the array
+    uint256 currentIndex = 0;
+    for (uint256 i = 0; i < userCount; i++) {
+        address user = listOfUsers[i];
+        if (!verifiedUsers[user] && unverifiedUsers[user].status) {
+            unverifiedUsersList[currentIndex] = unverifiedUsers[user];
+            currentIndex++;
+        }
+    }
+
+    return unverifiedUsersList;
+}
+
+    // get all unverified users
+    function isUserVerified(address user) external view returns (bool) {
+        return verifiedUsers[user];
+    }
+
+    // get request send or not
+    function isRequestSend(address user) external view returns (bool) {
+        return unverifiedUsers[user].isReqSend;
+    }
     
-    // function in contract
-    function listProperty(address owner , uint256 price , string memory _propertyTitle , string memory _category , string memory _images , string memory _propertyAddress , string memory _description) external returns (uint256){
-        require(price >0 , "Price must be greater ther 0.");
+    // Function to request user verification and upload documents
+    function verificationRequest(string memory document) external {
+        require(!verifiedUsers[msg.sender], "User already verified");
+        require(!unverifiedUsers[msg.sender].status, "Verification request already sent");
+
+        unverifiedUsers[msg.sender] = UnverifiedUser(msg.sender , true, true, document);
+        listOfUsers.push(msg.sender);
+        userCount++;
+        emit UserVerificationRequested(msg.sender, document);
+    }
+
+    // Function to verify user and add to the verified list
+    function verifyUser(address user) external onlyPropertyInspector {
+        require(unverifiedUsers[user].status, "User has not requested verification");
+        verifiedUsers[user] = true;
+        emit UserVerified(user, unverifiedUsers[user].document);
+        delete unverifiedUsers[user];
+    }
+
+    // Function for Property Inspector to verify a property
+    function verifyProperty(uint256 id) external onlyPropertyInspector {
+        Property storage property = properties[id];
+        require(property.owner != address(0), "Property does not exist");
+        require(verifiedUsers[property.owner], "Property owner not verified");
+        emit PropertyVerified(id, property.owner);
+    }
+
+    // Function for Contract Inspector to verify a contract
+    function verifyContract(uint256 id, address buyer, address seller) external onlyContractInspector {
+        Property storage property = properties[id];
+        require(property.owner == seller, "Seller does not own the property");
+        require(verifiedUsers[buyer], "Buyer not verified");
+        emit ContractVerified(id, buyer, seller);
+    }
+
+    // Function to list a property
+    function listProperty(
+        address owner,
+        uint256 price,
+        string memory _propertyTitle,
+        string memory _category,
+        string memory _images,
+        string memory _propertyAddress,
+        string memory _description
+    ) external returns (uint256) {
+        require(price > 0, "Price must be greater than 0");
         propertyIndex++;
         uint256 productId = propertyIndex;
         Property storage property = properties[productId];
@@ -78,8 +202,7 @@ contract RealEstate {
         property.propertyAddress = _propertyAddress;
         property.description = _description;
 
-        // emit are used to trigger events 
-        emit PropertyListed(productId , owner , price); // calling event here
+        emit PropertyListed(productId, owner, price);
         return productId;
     }
 

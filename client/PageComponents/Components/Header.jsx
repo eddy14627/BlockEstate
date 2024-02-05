@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useStateContext } from "../../context";
 import Link from "next/link";
 const Header = () => {
+  const [isPropertyInspector, setIsPropertyInspector] = React.useState(false);
+  const [isContractInspector, setIsContractInspector] = React.useState(false);
   const { userBlance, disconnect, address, contract, connect } =
     useStateContext();
+
+  const propertyInspector = 0x5466eff6d8f7779e757060ef147c56be39beb1f0;
+
+  const contractInspector = 0x21051cfae8c508f31af3b2a799ec0f4334575fb6;
+
+  useEffect(() => {
+    setIsContractInspector(address == contractInspector);
+    setIsPropertyInspector(address == propertyInspector);
+  }, [address]);
+
   return (
     <>
       <header class="rn-header haeder-default header--sticky">
@@ -21,100 +33,82 @@ const Header = () => {
               <div class="mainmenu-wrapper">
                 <nav id="sideNav" class="mainmenu-nav d-none d-xl-block">
                   <ul class="mainmenu">
-                    <li>
-                      <Link href="/about">About</Link>
-                    </li>
-                    <li>
-                      <Link href="#">Explore</Link>
-                      <ul class="submenu">
+                    {!isPropertyInspector && !isContractInspector && (
+                      <>
                         <li>
-                          <Link href="/active">
-                            Activity<i class="feather-fast-forward"></i>
-                          </Link>
+                          <Link href="/about">About</Link>
                         </li>
-                        {address && (
-                          <li>
-                            <Link href="/author">
-                              Author<i class="feather-fast-forward"></i>
-                            </Link>
-                          </li>
-                        )}
-                        {address && (
-                          <li>
-                            <Link href="/create">
-                              Create
-                              <i class="feather-fast-forward"></i>
-                            </Link>
-                          </li>
-                        )}
-
                         <li>
-                          <Link href="/creator">
-                            Creator
-                            <i class="feather-fast-forward"></i>
-                          </Link>
+                          <Link href="#">Explore</Link>
+                          <ul class="submenu">
+                            <li>
+                              <Link href="/active">
+                                Activity<i class="feather-fast-forward"></i>
+                              </Link>
+                            </li>
+                            {address && (
+                              <li>
+                                <Link href="/author">
+                                  Author<i class="feather-fast-forward"></i>
+                                </Link>
+                              </li>
+                            )}
+                            {address && (
+                              <li>
+                                <Link href="/create">
+                                  Create<i class="feather-fast-forward"></i>
+                                </Link>
+                              </li>
+                            )}
+                            <li>
+                              <Link href="/creator">
+                                Creator<i class="feather-fast-forward"></i>
+                              </Link>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <Link href="#">Pages</Link>
+                          <ul class="submenu">
+                            <li>
+                              <Link href="/privacy">
+                                Privacy<i class="feather-fast-forward"></i>
+                              </Link>
+                            </li>
+                            <li>
+                              <Link href="/404">
+                                404<i class="feather-fast-forward"></i>
+                              </Link>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <Link href="/contact">Contact</Link>
+                        </li>
+                      </>
+                    )}
+                    {isPropertyInspector && (
+                      <ul class="mainmenu">
+                        <li>
+                          <Link href="/verifyUser">Verify Users</Link>
+                        </li>
+                        {/* <li>
+                          <Link href="/verifyProperty">Verify Properties</Link>
+                        </li> */}
+                      </ul>
+                    )}
+                    {isContractInspector && (
+                      <ul class="mainmenu">
+                        <li>
+                          <Link href="/verifyContract">Verify Contracts</Link>
                         </li>
                       </ul>
-                    </li>
-                    <li>
-                      <Link href="#">Pages</Link>
-                      <ul class="submenu">
-                        <li>
-                          <Link href="/privacy">
-                            Privacy<i class="feather-fast-forward"></i>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link href="/404">
-                            404
-                            <i class="feather-fast-forward"></i>
-                          </Link>
-                        </li>
-                      </ul>
-                    </li>
-                    <li>
-                      <Link href="/contact">Contact</Link>
-                    </li>
+                    )}
                   </ul>
                 </nav>
               </div>
             </div>
             <div class="header-right">
-              {/* <div class="setting-option d-none d-lg-block">
-                <form class="search-form-wrapper" action="#">
-                  <input
-                    type="search"
-                    placeholder="Search Here"
-                    aria-label="Search"
-                  />
-                  <div class="search-icon">
-                    <button>
-                      <i class="feather-search"></i>
-                    </button>
-                  </div>
-                </form>
-              </div> */}
-              {/* <div class="setting-option rn-icon-list d-block d-lg-none">
-                <div class="icon-box search-mobile-icon">
-                  <button>
-                    <i class="feather-search"></i>
-                  </button>
-                </div>
-                <form
-                  id="header-search-1"
-                  action="#"
-                  method="GET"
-                  class="large-mobile-blog-search"
-                >
-                  <div class="rn-search-mobile form-group">
-                    <button type="submit" class="search-button">
-                      <i class="feather-search"></i>
-                    </button>
-                    <input type="text" placeholder="Search ..." />
-                  </div>
-                </form>
-              </div> */}
-
               {/* connect wallet */}
 
               {address ? (
@@ -141,7 +135,7 @@ const Header = () => {
                 <div>
                   <div class="setting-option rn-icon-list user-account">
                     <div class="icon-box">
-                      <Link href="/author">
+                      <Link href="#">
                         <img src="/icons/boy-avater.png" alt="Images" />
                       </Link>
                       <div class="rn-dropdown">
@@ -157,7 +151,10 @@ const Header = () => {
 
                         <ul class="list-inner">
                           <li>
-                            <Link href="/author">My Profile</Link>
+                            <Link href="/profilePage">My Profile</Link>
+                          </li>
+                          <li>
+                            <Link href="/author">My Properties</Link>
                           </li>
                           <li>
                             <Link href="#" onClick={() => disconnect()}>
