@@ -12353,7 +12353,149 @@ span.rn-badge-card::before {
   transform: translateY(-50%);
   font-family: "feather" !important;
 }
+/* Add these styles to your existing CSS file */
+.popup-mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff; /* Adjust the background color as needed */
+  overflow-y: auto;
+  z-index: 1000;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
 
+.popup-mobile-menu.show-mobile-menu {
+  transform: translateX(0);
+}
+
+.popup-mobile-menu .inner {
+  padding: 20px; /* Adjust the padding as needed */
+  box-sizing: border-box;
+}
+
+.popup-mobile-menu .header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px; /* Adjust the margin as needed */
+}
+
+.popup-mobile-menu .close-menu {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.popup-mobile-menu nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.popup-mobile-menu nav ul li {
+  margin-bottom: 10px; /* Adjust the margin as needed */
+}
+
+.popup-mobile-menu nav ul li a {
+  text-decoration: none;
+  color: #333; /* Adjust the text color as needed */
+  font-size: 16px; /* Adjust the font size as needed */
+}
+
+.logo img {
+  max-width: 100%; /* Make sure the image doesn't exceed its container */
+  height: auto; /* Maintain the aspect ratio */
+}
+
+/* Set a fixed size for the logo on mobile view */
+.logo img.mobile-logo {
+  width: 150px; /* Adjust the width as needed */
+  height: auto; /* Maintain the aspect ratio */
+}
+
+.popup-mobile-menu .header-top .logo img {
+  max-width: 100%; /* Make sure the image doesn't exceed its container */
+  height: auto; /* Maintain the aspect ratio */
+}
+
+.popup-mobile-menu .header-top .logo img.mobile-logo {
+  width: 150px; /* Adjust the width as needed */
+  height: auto; /* Maintain the aspect ratio */
+}
+
+/* .popup-mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.popup-mobile-menu.show-mobile-menu {
+  display: block;
+}
+
+.popup-mobile-menu .inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.popup-mobile-menu .header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.popup-mobile-menu nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.popup-mobile-menu nav ul li {
+  margin-bottom: 10px;
+}
+
+.popup-mobile-menu nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.popup-mobile-menu nav ul li a:hover {
+  background-color: #f1f1f1;
+}
+
+.popup-mobile-menu .close-menu button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.popup-mobile-menu .close-menu button:hover {
+  color: #ccc;
+} */
+
+/* 
 .popup-mobile-menu {
   z-index: 9999;
   position: fixed;
@@ -12506,7 +12648,7 @@ span.rn-badge-card::before {
   .mega-menu-item
   li:last-child {
   border-bottom-color: transparent;
-}
+} */
 
 /*--------------------------
     One Page Style Area  width: 1170px; margin-left: 320px;

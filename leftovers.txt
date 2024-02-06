@@ -1,0 +1,58 @@
+// const { contract } = useContract(
+  //   "0x37E5080006f4546E4250603EB677387eb8E20136"
+  // );
+  // previous contract
+  // const { contract } = useContract(
+  //   "0x513E53982884E20dD28798819E9c411D20493ea9"
+  // );
+  // second contract
+  // const { contract } = useContract(
+  //   "0x31Ad1e6c960Ee2667edb93E11194886B4BcAcFEF"
+  // );
+  // const { contract } = useContract(
+  //   "0x644F42A259e42426610194Ff004A869799a0d78A"
+  // );
+  const { contract } = useContract(
+    "0x7607d24F8eC49DE06B8b99C578Db67a631c97845"
+  );
+  // const { contract } = useContract(
+  //   "0x980729E1A5D5CB55FE6cD1383d9f6390C6f4D0dE"
+  // );
+  // const { contract } = useContract(
+  //   "0x0A14065fE7E3b3CA7B970eE761d690900F59e001"
+  // );
+  // const { contract } = useContract(
+  //   "0x9017bB9E2a4b81DCF35EaE142933D0B30e0db6E6"
+  // );
+  // const { contract } = useContract(
+  //   "0x92b5338F231e17c8724A71C6A8769f12634CcB08"
+  // );
+  // const { contract } = useContract(
+  //   "0x92b5338F231e17c8724A71C6A8769f12634CcB08"
+  // );
+
+  c0f4334575fb6;
+
+  // const fetchAddress = async () => {
+  //   const ad1 = await getContractInspector();
+  //   const ad2 = await getPropertyInspector();
+  //   console.log("ad1", ad1);
+  //   console.log("ad2", ad2);
+  // };
+  // useEffect(() => {
+  //   console.log("address", address);
+  // console.log("contractInspector", getContractInspector);
+  // console.log("propertyInspector", getPropertyInspector);
+  // console.log("contractInspector", contractInspector);
+  // console.log("propertyInspector", propertyInspector);
+  // fetchAddress();
+  // console.log("propertyInspector : ", getPropertyInspector());
+  // console.log("contractInspector : ", getContractInspector());
+  // if (address === contractInspector || address === propertyInspector) {
+  //   setIsContractInspector(address === contractInspector);
+  //   setIsPropertyInspector(address === propertyInspector);
+  // } else {
+  //   setIsContractInspector(false);
+  //   setIsPropertyInspector(false);
+  // }
+  // }, [address, contractInspector, propertyInspector]);

@@ -1,10 +1,15 @@
 import React from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome, faBitcoin } from "@fortawesome/free-solid-svg-icons";
+import {
+  faHome,
+  faBitcoin,
+  faArrowRight,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Live = ({ properties }) => {
   console.log(properties);
+  const n = properties.length;
   return (
     <div className="rn-live-bidding-area rn-section-gapTop">
       <div className="container">
@@ -12,7 +17,7 @@ const Live = ({ properties }) => {
           <div className="col-lg-12">
             <div className="section-title">
               <h3 className="title mb--0 live-bidding-title">
-                Listed Property
+                Latest Properties
               </h3>
             </div>
           </div>
@@ -76,7 +81,15 @@ const Live = ({ properties }) => {
                 </div>
               </div>
             ))
-            .slice(0, 5)}
+            .slice(n - 6, n)}
+        </div>
+        {/* Button to show all properties */}
+        <div className="text-center mt-4">
+          <Link href="/active">
+            <button className="btn btn-primary">
+              View All Properties <FontAwesomeIcon icon={faArrowRight} />
+            </button>
+          </Link>
         </div>
       </div>
     </div>

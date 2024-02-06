@@ -501,9 +501,13 @@ const DetailTwo = ({
                       <Loader />
                     ) : (
                       <>
-                        {address === property?.owner
-                          ? "You can't buy your owned Property"
-                          : `${property?.price} MATIC Buy Property`}
+                        {address === property?.owner ? (
+                          "You can't buy your owned Property"
+                        ) : isLoading ? (
+                          <Loader />
+                        ) : (
+                          `${property?.price} MATIC Buy Property`
+                        )}
                       </>
                     )}
                   </button>

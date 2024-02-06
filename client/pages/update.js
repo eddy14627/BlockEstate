@@ -13,7 +13,6 @@ import {
 import { useStateContext } from "../context";
 import { checkIfImage } from "../utils";
 import axios from "axios";
-// import { useStateContext } from "../context";
 
 const categories = [
   "Housing",
@@ -56,16 +55,17 @@ const CustomDropdown = ({ options, value, onChange }) => {
     </div>
   );
 };
+
 const Update = () => {
   useEffect(() => {
     // import("bootstrap/dist/css/bootstrap.min.css");
     // Initialize Bootstrap JavaScript after the component is rendered
     import("bootstrap/dist/js/bootstrap.bundle.min.js");
   }, []);
+
   const router = useRouter();
   const { query } = router;
-  // console.log(query.property);
-  const propertyId = query.property;
+  const propertyId = query.property - 1;
 
   const [isLoading, setIsLoading] = useState(false);
   const [file, setFile] = useState(null);
@@ -96,7 +96,7 @@ const Update = () => {
           productId: query.property * 1,
         });
         setIsLoading(false);
-        window.location.reload();
+        router.push("/");
       } else {
         alert("Provide valid image URL");
         setForm({ ...form, images: "" });
@@ -134,6 +134,7 @@ const Update = () => {
       }
     }
   };
+
   const retrieveFile = (event) => {
     const data = event.target.files[0];
 
@@ -150,8 +151,8 @@ const Update = () => {
 
     event.preventDefault();
   };
-  const { address, contract, getUserPropertiesFunction, getPropertiesData } =
-    useStateContext();
+
+  const { contract, getPropertiesData } = useStateContext();
 
   const fetchProperty = async () => {
     setIsLoading(true);

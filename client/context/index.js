@@ -20,8 +20,11 @@ export const StateContextProvider = ({ children }) => {
   // const { contract } = useContract(
   //   "0x37E5080006f4546E4250603EB677387eb8E20136"
   // );
+  // const { contract } = useContract(
+  //   "0x513E53982884E20dD28798819E9c411D20493ea9"
+  // );
   const { contract } = useContract(
-    "0x513E53982884E20dD28798819E9c411D20493ea9"
+    "0x7CE3f9EA60e997E1b8DF26B39D25Cc5899Ecf05c"
   );
   const address = useAddress();
   const connect = useMetamask();

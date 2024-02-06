@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ethers } from "ethers";
 import axios from "axios";
 import Link from "next/link";
@@ -7,6 +7,7 @@ import { Loader } from "../Components";
 import { CreateThree } from ".";
 import { useStateContext } from "../../context";
 import { checkIfImage } from "../../utils";
+import { useRouter } from "next/router";
 
 const categories = [
   "Housing",
@@ -18,14 +19,14 @@ const categories = [
 ];
 
 const CreateTwo = () => {
+  const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
-  const [properties, setProperties] = useState([]);
+  const [imgHash, setImgHash] = useState("");
   const [file, setFile] = useState(null);
   const [diplayImg, setDiplayImg] = useState(null);
   const [fileName, setFileName] = useState("Upload Image");
 
-  const { address, contract, connect, createPropertyFunction } =
-    useStateContext();
+  const { address, createPropertyFunction } = useStateContext();
 
   const [form, setForm] = useState({
     propertyTitle: "",
@@ -42,9 +43,9 @@ const CreateTwo = () => {
 
   const handleSubmit = async () => {
     setIsLoading(true);
+    form.images = imgHash;
     checkIfImage(form.images, async (exists) => {
       if (exists) {
-        const imgHash = await uploadToPinata();
         if (imgHash) {
           await createPropertyFunction({
             ...form,
@@ -52,6 +53,7 @@ const CreateTwo = () => {
             price: ethers.utils.parseUnits(form.price, 18),
           });
           setIsLoading(false);
+          router.push("/");
         }
       } else {
         alert("Provide valid image URL");
@@ -78,8 +80,8 @@ const CreateTwo = () => {
             "Content-Type ": "multipart/form-data",
           },
         });
-        const imgHash = `https://gateway.pinata.cloud/ipfs/${response.data.IpfsHash}`;
-
+        const imghash = `https://gateway.pinata.cloud/ipfs/${response.data.IpfsHash}`;
+        setImgHash(imghash);
         console.log(imgHash);
         setFileName("Image Uploaded");
         return imgHash;
@@ -315,6 +317,7 @@ const CreateTwo = () => {
           </div>
         </div>
       </div>
+
       <CreateThree data={form} />
     </>
   );
