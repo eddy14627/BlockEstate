@@ -12425,6 +12425,14 @@ span.rn-badge-card::before {
   height: auto; /* Maintain the aspect ratio */
 }
 
+/* Your CSS file or style tag */
+.fixed-size-image {
+  width: 100px; /* Set your desired width */
+  height: 100px; /* Set your desired height */
+  object-fit: cover; /* Preserve the aspect ratio and cover the container */
+  /* Add any additional styling as needed */
+}
+
 /* .popup-mobile-menu {
   display: none;
   position: fixed;

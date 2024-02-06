@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { getTopCreators } from "../../utils";
+import { Loader } from "../Components";
 
-const Activity = ({ properties, totalReviews }) => {
+const Activity = ({ properties, totalReviews, isLoading }) => {
   const creator = getTopCreators(properties);
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [filteredProperties, setFilteredProperties] = useState(properties);
@@ -27,8 +28,10 @@ const Activity = ({ properties, totalReviews }) => {
         </div>
         <div className="row g-6 activity-direction">
           <div className="col-lg-8 mb_dec--15">
-            {filteredProperties.length === 0 ? (
-              <p>No property of this type</p>
+            {isLoading ? (
+              <Loader />
+            ) : filteredProperties.length === 0 ? (
+              <p>No property</p>
             ) : (
               filteredProperties.map((activity, i) => (
                 <div className="single-activity-wrapper" key={i}>
@@ -36,7 +39,11 @@ const Activity = ({ properties, totalReviews }) => {
                     <div className="read-content">
                       <div className="thumbnail">
                         <Link href={`detail?property=${activity.productID}`}>
-                          <img src={activity.image} alt="Nft_Profile" />
+                          <img
+                            className="fixed-size-image"
+                            src={activity.image}
+                            alt="Nft_Profile"
+                          />
                         </Link>
                       </div>
                       <div className="content">

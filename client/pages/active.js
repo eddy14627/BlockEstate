@@ -5,7 +5,7 @@ import { Activity } from "../PageComponents/ActivityPage";
 import { Header, Footer, Copyright } from "../PageComponents/Components";
 import { useStateContext } from "../context";
 const Active = () => {
-  // const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [properties, setProperties] = useState([]);
   const [totalReviews, setTotalReviews] = useState();
 
@@ -19,18 +19,17 @@ const Active = () => {
 
   //GET DATA
   const fetchProperty = async () => {
-    // setIsLoading(true);
+    setIsLoading(true);
     const data = await getPropertiesData();
     const reviewsLength = await totalReviewsFunction();
     setTotalReviews(reviewsLength);
     setProperties(data);
-    // setIsLoading(false);
+    setIsLoading(false);
   };
 
   useEffect(() => {
     if (contract) fetchProperty();
   }, [address, contract]);
-  console.log(getHighestRatedProduct);
   return (
     <div class="template-color-1 nft-body-connect">
       <Header />
@@ -38,6 +37,7 @@ const Active = () => {
         properties={properties}
         totalReviews={totalReviews}
         popular={getHighestRatedProduct?.toNumber()}
+        isLoading={isLoading}
       />
       <Footer />
       <Copyright />

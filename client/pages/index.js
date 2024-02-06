@@ -17,7 +17,7 @@ import { useStateContext, useStatecontext } from "../context";
 import { getTopCreators } from "../utils";
 
 const Index = () => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [properties, setProperties] = useState([]);
 
   const { address, contract, getPropertiesData } = useStateContext();
@@ -26,7 +26,6 @@ const Index = () => {
   const fetchProperty = async () => {
     setIsLoading(true);
     const data = await getPropertiesData();
-    console.log("properties data : ", data);
     setProperties(data);
     setIsLoading(false);
   };
@@ -35,7 +34,6 @@ const Index = () => {
     if (contract) fetchProperty();
   }, [address, contract]);
 
-  // console.log(properties);
   const housing = [];
   const rental = [];
   const farmhouse = [];
@@ -68,9 +66,8 @@ const Index = () => {
     <div className="template-color-1 nft-body-connect">
       <Header />
       <Banner />
-      <Live properties={properties} />
+      <Live isLoading={isLoading} properties={properties} />
       <Service />
-      {/* <Product properties={properties} /> */}
       <TopSeller creators={creators} />
       <Collection
         housing={housing?.length}
